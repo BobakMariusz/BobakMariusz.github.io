@@ -1,9 +1,11 @@
 +++
-title = "Pierwszy post"
+title = "Korelacja zdarzeń"
 date = 2025-03-22
 
-tags = ["Zola", "Rust", "Blog"]
-categories = ["Technologia"]
+[taxonomies]
+tags = ["Korelacja", "Algorytmy", "Sieci neuronowe", "Głębokie sieci neuronowe"]
+categories = ["AI", "ML"]
 
 +++
-Treść pierwszego posta.
+
+TO DO

@@ -7,6 +7,12 @@
         <loc>https://bobakmariusz.github.io/categories/</loc>
     </url>
     <url>
+        <loc>https://bobakmariusz.github.io/categories/ai/</loc>
+    </url>
+    <url>
+        <loc>https://bobakmariusz.github.io/categories/ml/</loc>
+    </url>
+    <url>
         <loc>https://bobakmariusz.github.io/page/1/</loc>
     </url>
     <url>
@@ -15,5 +21,17 @@
     </url>
     <url>
         <loc>https://bobakmariusz.github.io/tags/</loc>
+    </url>
+    <url>
+        <loc>https://bobakmariusz.github.io/tags/algorytmy/</loc>
+    </url>
+    <url>
+        <loc>https://bobakmariusz.github.io/tags/glebokie-sieci-neuronowe/</loc>
+    </url>
+    <url>
+        <loc>https://bobakmariusz.github.io/tags/korelacja/</loc>
+    </url>
+    <url>
+        <loc>https://bobakmariusz.github.io/tags/sieci-neuronowe/</loc>
     </url>
 </urlset>
