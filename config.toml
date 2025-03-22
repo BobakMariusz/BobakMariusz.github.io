@@ -13,13 +13,30 @@ output_dir = "docs"
 # Template
 theme = "radion"
 
+[search]
+index_format = "elasticlunr_json"
+
 [markdown]
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
 highlight_code = true
+highlight_theme = "one-dark"
 
 [extra]
 # Put all your custom variables here
+theme = "toggle"
+
+toc = true
+
+enable_search = true
+
+codeblock = true
+
+latex = true
+
+author = "Mariusz Sebastian Bobak - Zawałowczyn"
+
+comments = true
 giscus_repo = "bobakmariusz/bobakmariusz.github.io"
 giscus_repo_id = "R_kgDOOM3PUA"
 giscus_data_category_id = "DIC_kwDOOM3PUM4CoW01"
