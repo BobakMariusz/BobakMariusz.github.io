@@ -1,2 +1,1 @@
-# BobakMariusz.github.io
-Blog
+# bobakmariusz.github.io
