@@ -10,6 +10,9 @@ build_search_index = true
 # Build output directory
 output_dir = "docs"
 
+# Template
+theme = "radion"
+
 [markdown]
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
@@ -17,5 +20,6 @@ highlight_code = true
 
 [extra]
 # Put all your custom variables here
-
-
+giscus_repo = "bobakmariusz/bobakmariusz.github.io"
+giscus_repo_id = "R_kgDOOM3PUA"
+giscus_data_category_id = "DIC_kwDOOM3PUM4CoW01"
