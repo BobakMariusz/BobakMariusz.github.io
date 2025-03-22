@@ -1,6 +1,10 @@
 # The URL the site will be built for
 base_url = "https://bobakmariusz.github.io"
 
+title = "Mariusz Bobak - Blog"
+description = "Blog o technologii"
+
+
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
@@ -13,8 +17,9 @@ output_dir = "docs"
 # Template
 theme = "radion"
 
+generate_feeds = true
+
 taxonomies = [
-    # You can enable/disable RSS
     {name = "categories", feed = true},
     {name = "tags", feed = true},
 ]
@@ -47,10 +52,10 @@ giscus_repo = "bobakmariusz/bobakmariusz.github.io"
 giscus_repo_id = "R_kgDOOM3PUA"
 giscus_data_category_id = "DIC_kwDOOM3PUM4CoW01"
 
+github = "https://github.com/BobakMariusz"
 
 radion_menu = [
     {url = "$BASE_URL", name = "Home"},
     {url = "$BASE_URL/categories", name = "Kategorie"},
     {url = "$BASE_URL/tags", name = "Tagi"},
-    {url = "https://google.com", name = "Google"},
 ]
