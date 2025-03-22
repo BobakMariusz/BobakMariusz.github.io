@@ -4,10 +4,16 @@
         <loc>https://bobakmariusz.github.io/</loc>
     </url>
     <url>
+        <loc>https://bobakmariusz.github.io/categories/</loc>
+    </url>
+    <url>
         <loc>https://bobakmariusz.github.io/page/1/</loc>
     </url>
     <url>
         <loc>https://bobakmariusz.github.io/post1/</loc>
         <lastmod>2025-03-22</lastmod>
+    </url>
+    <url>
+        <loc>https://bobakmariusz.github.io/tags/</loc>
     </url>
 </urlset>

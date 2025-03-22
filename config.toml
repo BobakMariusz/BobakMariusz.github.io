@@ -13,6 +13,12 @@ output_dir = "docs"
 # Template
 theme = "radion"
 
+taxonomies = [
+    # You can enable/disable RSS
+    {name = "categories", feed = true},
+    {name = "tags", feed = true},
+]
+
 [search]
 index_format = "elasticlunr_json"
 
@@ -40,3 +46,11 @@ comments = true
 giscus_repo = "bobakmariusz/bobakmariusz.github.io"
 giscus_repo_id = "R_kgDOOM3PUA"
 giscus_data_category_id = "DIC_kwDOOM3PUM4CoW01"
+
+
+radion_menu = [
+    {url = "$BASE_URL", name = "Home"},
+    {url = "$BASE_URL/categories", name = "Kategorie"},
+    {url = "$BASE_URL/tags", name = "Tagi"},
+    {url = "https://google.com", name = "Google"},
+]
