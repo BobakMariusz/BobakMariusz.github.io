@@ -55,7 +55,7 @@ giscus_data_category_id = "DIC_kwDOOM3PUM4CoW01"
 github = "https://github.com/BobakMariusz"
 
 radion_menu = [
-    {url = "$BASE_URL", name = "Home"},
+    {url = "$BASE_URL", name = "Strona główna"},
     {url = "$BASE_URL/categories", name = "Kategorie"},
     {url = "$BASE_URL/tags", name = "Tagi"},
 ]
