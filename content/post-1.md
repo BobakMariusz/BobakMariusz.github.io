@@ -1,5 +1,5 @@
 +++
-title = "Korelacja zdarzeń"
+title = "Korelacja danych"
 date = 2025-03-22
 
 [taxonomies]
