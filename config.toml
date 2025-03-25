@@ -17,6 +17,8 @@ output_dir = "docs"
 # Template
 theme = "radion"
 
+minify_html = false
+
 generate_feeds = true
 
 taxonomies = [
