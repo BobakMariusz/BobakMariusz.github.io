@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="pl-PL">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <!-- Enable responsiveness on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+    <meta name="description" content="Blog na temat technologii - w sczególności o architekturze, sieciach neuronowych oraz wszechobecnej sztucznej inteligencji" />
+    <meta property="og:description" content="Blog na temat technologii - w sczególności o architekturze, sieciach neuronowych oraz wszechobecnej sztucznej inteligencji" />
+    <meta property="twitter:description" content="Blog na temat technologii - w sczególności o architekturze, sieciach neuronowych oraz wszechobecnej sztucznej inteligencji" />
+    
+
+    <!-- Title -->
+      
+
+    <title>
+    
+    Automatyczna analiza oraz korelacja zdarzeń
+    
+</title>
+
+    <!-- Additional Facebook Meta Tags -->
+    <meta
+      property="og:url"
+      content="https:&#x2F;&#x2F;bobakmariusz.github.io&#x2F;post-1&#x2F;"
+    />
+    <meta
+      property="og:type"
+      content="article"
+    />
+    <meta property="og:title" content="Automatyczna analiza oraz korelacja zdarzeń" />
+    <meta
+      property="og:image"
+      content="https:&#x2F;&#x2F;bobakmariusz.github.io/icons/favicon/web-app-manifest-512x512.png"
+    />
+
+    <!-- Additional Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https:&#x2F;&#x2F;bobakmariusz.github.io&#x2F;post-1&#x2F;"
+    />
+    <meta name="twitter:title" content="Automatyczna analiza oraz korelacja zdarzeń" />
+    <meta
+      name="twitter:image"
+      content="https:&#x2F;&#x2F;bobakmariusz.github.io/icons/favicon/web-app-manifest-512x512.png"
+    />
+
+    <!-- Favicons -->
+    
+    <link
+      rel="icon"
+      type="image/png"
+      href="https:&#x2F;&#x2F;bobakmariusz.github.io/icons/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https:&#x2F;&#x2F;bobakmariusz.github.io/icons/favicon/favicon.svg"
+    />
+    <link
+      rel="shortcut icon"
+      href="https:&#x2F;&#x2F;bobakmariusz.github.io/icons/favicon/favicon.ico"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https:&#x2F;&#x2F;bobakmariusz.github.io/icons/favicon/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="Automatyczna analiza oraz korelacja zdarzeń" />
+    <link
+      rel="manifest"
+      href="https:&#x2F;&#x2F;bobakmariusz.github.io/icons/favicon/site.webmanifest"
+    />
+    
+
+    <!-- RSS Feed -->
+    
+
+    <!-- Load Styles -->
+    <link
+      rel="stylesheet"
+      href="https://bobakmariusz.github.io/site.css"
+    />
+
+    <!-- Pass Theme Preference as Data Attribute -->
+    <script>
+      document.documentElement.dataset.theme =
+        "toggle";
+    </script>
+  </head>
+
+  <body class="hack dark main container">
+    
+    
+         
+    <header class="nav-header">
+      <nav
+        itemscope
+        itemtype="http://schema.org/SiteNavigationElement"
+        class="navbar"
+      >
+        <div class="nav-links">
+          
+          <a
+            itemprop="url"
+            class=""
+            href="https://bobakmariusz.github.io"
+          >
+            <span itemprop="name">Strona główna</span>
+          </a>
+          
+          <a
+            itemprop="url"
+            class=""
+            href="https://bobakmariusz.github.io/categories"
+          >
+            <span itemprop="name">Kategorie</span>
+          </a>
+          
+          <a
+            itemprop="url"
+            class=""
+            href="https://bobakmariusz.github.io/tags"
+          >
+            <span itemprop="name">Tagi</span>
+          </a>
+          
+        </div>
+  </ul>
+      </nav>
+      <div class="user-actions-container">
+         
+        <a id="dark-mode-toggle" href="#">
+          <img
+            src="https://bobakmariusz.github.io/icons/sun.svg"
+            id="sun-icon"
+            style="filter: invert(1)"
+            alt="Light mode"
+          />
+          <img
+            src="https://bobakmariusz.github.io/icons/moon.svg"
+            id="moon-icon"
+            alt="Dark mode"
+          />
+        </a>
+          
+        <a
+          href="https:&#x2F;&#x2F;github.com&#x2F;BobakMariusz"
+          class="feed-icon"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="https://bobakmariusz.github.io/icons/github.svg"
+            id="github-icon"
+            alt="GitHub"
+            class="social-icon"
+          />
+        </a>
+        
+      </div>
+    </header>
+     
+    
+
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        <h1 itemprop="headline">Automatyczna analiza oraz korelacja zdarzeń</h1>
+        <span class="muted">
+    <svg class="icon i-clock" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <circle cx="16" cy="16" r="14"/>
+        <path d="M16 8 L16 16 20 20"/>
+    </svg>
+    <span>4 minute read</span>
+    <svg class="icon i-edit" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <path d="M30 7 L25 2 5 22 3 29 10 27 Z M21 6 L26 11 Z M5 22 L10 27 Z"/>
+    </svg>
+
+    Published: 2025-03-22
+</span>
+    </header>
+
+    <div itemprop="articleBody">
+        
+            <!-- If no summary separate from content, just render content -->
+            <p>Czy zastanawiałeś się kiedyś, jak przewidzieć blackout w sieci energetycznej albo skok kursu Bitcoina po jednym tweecie Elona Muska? Odpowiedź leży w automatycznej analizie zdarzeń i ich korelacji. W tym poście pokażę Ci, jak technologia może znaleźć związki tam, gdzie na pierwszy rzut oka ich nie widać, i jak wykorzystać to do przewidywania przyszłości.</p>
+<h2 id="wprowadzenie-do-automatycznej-analizy-zdarzen">Wprowadzenie do automatycznej analizy zdarzeń</h2>
+<p>Wyobraź sobie, że masz tysiące danych: czujniki w elektrowni, wpisy na X-ie, nagłówki prasowe. Ręczne ich analizowanie to jak szukanie igły w stogu siana – tylko że stóg rośnie z każdą minutą. Automatyczna analiza zdarzeń to sposób na to, by maszyny zrobiły to za nas: szybko, dokładnie i bez kawy na podtrzymanie. Dzięki niej możemy nie tylko zrozumieć, co się dzieje, ale też znaleźć powiązania między tymi danymi – czyli przejść do korelacji.</p>
+<h2 id="czym-jest-korelacja-zdarzen-i-dlaczego-ma-znaczenie">Czym jest korelacja zdarzeń i dlaczego ma znaczenie?</h2>
+<p>Korelacja to po prostu miara zależności między dwoma rzeczami. Jeśli temperatura w elektrowni rośnie, a zaraz potem wysiada system chłodzenia – to korelacja. Jeśli Elon tweetuje "Dogecoin!", a kurs skacze o 20% – to też korelacja. Brzmi prosto, ale diabeł tkwi w szczegółach. Korelacja może być liniowa (prosta jak linijka) albo nieliniowa (krzywa jak rollercoaster). Dlaczego to ważne? Bo zrozumienie tych związków to pierwszy krok do przewidywania, co będzie dalej.</p>
+<h2 id="zrodla-danych-od-czujnikow-po-media-spolecznosciowe">Źródła danych: Od czujników po media społecznościowe</h2>
+<p>Dane to paliwo analizy, a źródeł mamy pod dostatkiem:</p>
+<ul>
+<li>
+<p>Czujniki: Temperatura, ciśnienie, ruch sieciowy – wszystko, co mierzą maszyny.</p>
+</li>
+<li>
+<p>Prasa: "Awaria w sieci energetycznej !" – nagłówki pełne emocji i faktów.</p>
+</li>
+<li>
+<p>X: "BTC to the moon!" – chaos, ale i złoto dla analityków.</p>
+</li>
+</ul>
+<p>Problem? Każde źródło mówi innym językiem. Czujniki dają liczby, X – emocje, a prasa – historie.
+Połączenie ich to jak dogadanie się psa z kotem – trudne, ale możliwe.</p>
+<h2 id="narzedzia-i-technologie-do-analizy-zdarzen">Narzędzia i technologie do analizy zdarzeń</h2>
+<p>Żeby ogarnąć ten bałagan, potrzebujemy odpowiednich narzędzi:</p>
+<ul>
+<li>
+<p>NiFi: Zbiera dane z różnych źródeł w czasie rzeczywistym – jak odkurzacz dla big data.</p>
+</li>
+<li>
+<p>OpenSearch: Indeksuje wszystko, od tweetów po logi.</p>
+</li>
+<li>
+<p>Wytrenowane specyficzne modele: Aby nie wymyślać koła na nowo.</p>
+</li>
+<li>
+<p>Sieci neuronowe: Gdy zwykła matematyka nie wystarczy, one znajdują nieliniowe związki.</p>
+</li>
+</ul>
+<h2 id="metody-wiazania-zdarzen-z-roznych-zrodel">Metody wiązania zdarzeń z różnych źródeł</h2>
+<p>Jak sprawić, by dane z czujników i X-a zaczęły ze sobą rozmawiać? Oto kilka trików:</p>
+<ul>
+<li>
+<p>Wyrównanie czasowe: Jeśli tweet o 10:00 mówi "Awaria!", a czujnik o 10:01 pokazuje spadek napięcia – łączymy je po czasie.</p>
+</li>
+<li>
+<p>Analiza sentymentu: "Super system!" (pozytywne) vs. "Katastrofa!" (negatywne) – sentyment z tekstu może wskazywać kierunek zmian.</p>
+</li>
+<li>
+<p>Korelacja krzyżowa: Sprawdza, czy jedno zdarzenie (np. tweet) poprzedza inne (np. skok kursu) z opóźnieniem.</p>
+</li>
+</ul>
+<p>Przykład? Tweet "BTC pump!" o 9:00 i wzrost kursu o 9:05 – korelacja krzyżowa pokaże, że reakcja trwa 5 minut.</p>
+<h2 id="od-korelacji-do-predykcji-jak-przewidywac-przyszlosc">Od korelacji do predykcji: Jak przewidywać przyszłość?</h2>
+<p>Znalazłeś korelację – co dalej? Czas na predykcję! Jeśli wiemy, że pozytywne X-y podnoszą kurs kryptowaluty, możemy użyć sieci neuronowych (np. LSTM), by przewidzieć, co będzie jutro.
+Albo jeśli wysoka temperatura w elektrowni koreluje z awariami, system może ostrzec: "Uwaga, za godzinę blackout!". To jak kryształowa kula, tylko oparta na danych, a nie magii.</p>
+<h2 id="przyklady-zastosowan-w-praktyce">Przykłady zastosowań w praktyce</h2>
+<p>Gdzie to działa?</p>
+<ul>
+<li>
+<p>Kryptowaluty: Sentyment z X + dane rynkowe = prognoza, czy Bitcoin poleci w górę czy w dół.</p>
+</li>
+<li>
+<p>Bezpieczeństwo IT: Wzrost błędów w logach + newsy o cyberatakach = wczesne ostrzeżenie.</p>
+</li>
+</ul>
+<h2 id="wyzwania-i-pulapki-w-analizie-zdarzen">Wyzwania i pułapki w analizie zdarzeń</h2>
+<p>Nie wszystko jest różowe:</p>
+<p>Szum: X pełen jest żartów i plotek – jak odróżnić sygnał od hałasu?</p>
+<ul>
+<li>
+<p>Korelacja ≠ przyczynowość: Wzrost sprzedaży lodów i awarie klimatyzacji latem? Korelacja jest, ale jedno nie powoduje drugiego.</p>
+</li>
+<li>
+<p>Brak danych: Jeśli czujnik się zepsuł, a X milczy – nici z analizy.</p>
+</li>
+</ul>
+<p>Klucz to ostrożność i weryfikacja – dane kłamią częściej, niż myślisz.</p>
+<h2 id="przyszlosc-automatycznej-analizy-zdarzen">Przyszłość automatycznej analizy zdarzeń</h2>
+<p>Co przyniesie jutro? Sztuczna inteligencja, jak duże modele językowe (LLM), już teraz potrafi analizować sentyment i znajdować wzorce w chaosie.
+Za kilka lat możemy mieć systemy, które przewidzą awarię sieci, zanim inżynier włoży buty, albo portfel kryptowalutowy, który sam kupuje BTC, gdy X szaleje.
+Brzmi futurystycznie? To tylko kwestia czasu.</p>
+
+        
+    </div>
+
+    <!-- Comment section -->
+    
+      
+        
+          <script
+  src="https://giscus.app/client.js"
+  data-repo="bobakmariusz&#x2F;bobakmariusz.github.io"
+  data-repo-id="R_kgDOOM3PUA"
+  data-category="General"
+  data-category-id="DIC_kwDOOM3PUM4CoW01"
+  data-mapping="pathname"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="bottom"
+  data-theme="preferred_color_scheme"
+  data-lang="en"
+  data-loading="lazy"
+  crossorigin="anonymous"
+  async
+></script>
+
+        
+      
+    
+
+
+    
+        <footer>
+            <hr>
+            <p>
+                
+                    Published by Mariusz Sebastian Bobak - Zawałowczyn
+                
+                
+                    
+                    in <a href="https://bobakmariusz.github.io/categories/ai/">AI</a>
+                
+                
+                    and
+                    tagged
+                    
+                        <a href="https://bobakmariusz.github.io/tags/analiza-danych/">Analiza danych</a>
+                        
+                            
+                                
+                                    ,
+                                
+                            
+                        
+                    
+                        <a href="https://bobakmariusz.github.io/tags/badanie-sentymentow/">Badanie sentymentów</a>
+                        
+                            
+                                
+                                    ,
+                                
+                            
+                        
+                    
+                        <a href="https://bobakmariusz.github.io/tags/sieci-neuronowe/">Sieci neuronowe</a>
+                        
+                            
+                                
+                                    ,
+                                
+                            
+                        
+                    
+                        <a href="https://bobakmariusz.github.io/tags/lstm/">LSTM</a>
+                        
+                            
+                                
+                                    and
+                                
+                            
+                        
+                    
+                        <a href="https://bobakmariusz.github.io/tags/heterogeniczna-korelacja/">Heterogeniczna korelacja</a>
+                        
+                            
+                        
+                    
+                
+            </p>
+            
+            
+        </footer>
+    
+</article>
+
+
+
+    <!-- optional scripts -->
+     
+    <script src="https://bobakmariusz.github.io/js/codeblock.js"></script>
+     
+    <script src="https://bobakmariusz.github.io/js/toggle-theme.js"></script>
+     
+<!-- MathJax script for rendering LaTeX math equations -->
+<script src="https://bobakmariusz.github.io/js/mathjax-config.js"></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+  async
+></script>
+
+  
+  </body>
+</html>

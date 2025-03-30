@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://bobakmariusz.github.io/</loc>
+    </url>
+    <url>
+        <loc>https://bobakmariusz.github.io/categories/</loc>
+    </url>
+    <url>
+        <loc>https://bobakmariusz.github.io/categories/ai/</loc>
+    </url>
+    <url>
+        <loc>https://bobakmariusz.github.io/page/1/</loc>
+    </url>
+    <url>
+        <loc>https://bobakmariusz.github.io/post-1/</loc>
+        <lastmod>2025-03-22</lastmod>
+    </url>
+    <url>
+        <loc>https://bobakmariusz.github.io/tags/</loc>
+    </url>
+    <url>
+        <loc>https://bobakmariusz.github.io/tags/analiza-danych/</loc>
+    </url>
+    <url>
+        <loc>https://bobakmariusz.github.io/tags/badanie-sentymentow/</loc>
+    </url>
+    <url>
+        <loc>https://bobakmariusz.github.io/tags/heterogeniczna-korelacja/</loc>
+    </url>
+    <url>
+        <loc>https://bobakmariusz.github.io/tags/lstm/</loc>
+    </url>
+    <url>
+        <loc>https://bobakmariusz.github.io/tags/sieci-neuronowe/</loc>
+    </url>
+</urlset>
