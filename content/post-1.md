@@ -16,7 +16,7 @@ Czy zastanawiałeś się kiedyś, jak przewidzieć blackout w sieci energetyczne
 Wyobraź sobie, że masz tysiące danych: czujniki w elektrowni, wpisy na X-ie, nagłówki prasowe. Ręczne ich analizowanie to jak szukanie igły w stogu siana – tylko że stóg rośnie z każdą minutą. Automatyczna analiza zdarzeń to sposób na to, by maszyny zrobiły to za nas: szybko, dokładnie i bez kawy na podtrzymanie. Dzięki niej możemy nie tylko zrozumieć, co się dzieje, ale też znaleźć powiązania między tymi danymi – czyli przejść do korelacji.
 
 
-## Czym jest korelacja zdarzeń i dlaczego ma znaczenie?
+## Czym jest korelacja zdarzeń i dlaczego ma znaczenie ?
 
 Korelacja to po prostu miara zależności między dwoma rzeczami. Jeśli temperatura w elektrowni rośnie, a zaraz potem wysiada system chłodzenia – to korelacja. Jeśli Elon tweetuje "Dogecoin!", a kurs skacze o 20% – to też korelacja. Brzmi prosto, ale diabeł tkwi w szczegółach. Korelacja może być liniowa (prosta jak linijka) albo nieliniowa (krzywa jak rollercoaster). Dlaczego to ważne? Bo zrozumienie tych związków to pierwszy krok do przewidywania, co będzie dalej.
 
@@ -34,7 +34,7 @@ Dane to paliwo analizy, a źródeł mamy pod dostatkiem:
 Problem? Każde źródło mówi innym językiem. Czujniki dają liczby, X – emocje, a prasa – historie. 
 Połączenie ich to jak dogadanie się psa z kotem – trudne, ale możliwe.
 
-##  Narzędzia i technologie do analizy zdarzeń
+## Narzędzia i technologie do analizy zdarzeń
 
 Żeby ogarnąć ten bałagan, potrzebujemy odpowiednich narzędzi:
 
@@ -90,4 +90,7 @@ Co przyniesie jutro? Sztuczna inteligencja, jak duże modele językowe (LLM), ju
 Za kilka lat możemy mieć systemy, które przewidzą awarię sieci, zanim inżynier włoży buty, albo portfel kryptowalutowy, który sam kupuje BTC, gdy X szaleje. 
 Brzmi futurystycznie? To tylko kwestia czasu.
 
+## Jak powiedział tak zrobił
 
+Poniżej znajduje się repozytorium związane z zagadnieniem o którym była mowa.
+-  [Link do repozytorium](https://github.com/BobakMariusz/events-correlations/tree/main)
