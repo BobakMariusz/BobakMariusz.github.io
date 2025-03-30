@@ -2,14 +2,10 @@
 base_url = "https://bobakmariusz.github.io"
 
 title = "Mariusz Bobak - Blog"
-description = "Blog o technologii"
-
+description = "Blog na temat technologii - w sczególności o architekturze, sieciach neuronowych oraz wszechobecnej sztucznej inteligencji"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
-
-# Whether to build a search index to be used later on by a JavaScript library
-build_search_index = true
 
 # Build output directory
 output_dir = "docs"
@@ -17,17 +13,22 @@ output_dir = "docs"
 # Template
 theme = "radion"
 
-minify_html = false
-
-generate_feeds = true
+# Language
+default_language = "pl" 
 
 taxonomies = [
     {name = "categories", feed = true},
     {name = "tags", feed = true},
 ]
 
+# Search
+#build_search_index = true
+
 [search]
-index_format = "elasticlunr_json"
+#index_format = "elasticlunr_json"
+
+# Additional
+minify_html = true
 
 [markdown]
 # Whether to do syntax highlighting
@@ -38,24 +39,23 @@ highlight_theme = "one-dark"
 [extra]
 # Put all your custom variables here
 theme = "toggle"
-
 toc = true
-
-enable_search = true
-
+#enable_search = true
 codeblock = true
-
 latex = true
 
 author = "Mariusz Sebastian Bobak - Zawałowczyn"
 
+# Comments
 comments = true
 giscus_repo = "bobakmariusz/bobakmariusz.github.io"
 giscus_repo_id = "R_kgDOOM3PUA"
 giscus_data_category_id = "DIC_kwDOOM3PUM4CoW01"
 
+
 github = "https://github.com/BobakMariusz"
 
+# menau
 radion_menu = [
     {url = "$BASE_URL", name = "Strona główna"},
     {url = "$BASE_URL/categories", name = "Kategorie"},
