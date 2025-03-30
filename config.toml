@@ -13,8 +13,13 @@ output_dir = "docs"
 # Template
 theme = "radion"
 
+# RSS
+
+generate_feeds = true
+
 # Language
 default_language = "pl" 
+
 
 taxonomies = [
     {name = "categories", feed = true},
