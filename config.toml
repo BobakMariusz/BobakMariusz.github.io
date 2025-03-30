@@ -14,7 +14,7 @@ output_dir = "docs"
 theme = "radion"
 
 # Language
-default_language = "pl" 
+default_language = "en" 
 
 taxonomies = [
     {name = "categories", feed = true},
