@@ -1,5 +1,5 @@
 +++
-title = "Wykrywanie anomalii w ruchu morskim z wykorzystaniem algorytmów nauczania przez wzmacnianie"
+title = "Wykrywanie anomalii w ruchu morskim z wykorzystaniem algorytmów RL"
 date = 2025-06-08
 
 [taxonomies]
