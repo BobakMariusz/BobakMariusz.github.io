@@ -5,8 +5,185 @@
     <link rel="self" type="application/atom+xml" href="https://bobakmariusz.github.io/tags/sieci-neuronowe/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://bobakmariusz.github.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2025-03-22T00:00:00+00:00</updated>
+    <updated>2025-06-08T00:00:00+00:00</updated>
     <id>https://bobakmariusz.github.io/tags/sieci-neuronowe/atom.xml</id>
+    <entry xml:lang="pl">
+        <title>Wykrywanie anomalii w ruchu morskim z wykorzystaniem algorytmów nauczania przez wzmacnianie</title>
+        <published>2025-06-08T00:00:00+00:00</published>
+        <updated>2025-06-08T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://bobakmariusz.github.io/post-2/"/>
+        <id>https://bobakmariusz.github.io/post-2/</id>
+        
+        <content type="html" xml:base="https://bobakmariusz.github.io/post-2/">&lt;p&gt;W dzisiejszym świecie, gdzie transport morski odpowiada za ponad 80% globalnego handlu, monitorowanie ruchu statków jest kluczowe dla zapewnienia bezpieczeństwa, ochrony środowiska i przeciwdziałania nielegalnym działaniom. System AIS (Automatic Identification System) dostarcza szczegółowych danych o pozycji, prędkości i kursie jednostek pływających, umożliwiając analizę ich trajektorii w czasie rzeczywistym. Jednak w ogromie tych danych kryją się potencjalne anomalie – nietypowe manewry, wyłączanie nadajników AIS czy dryfowanie – które mogą wskazywać na problemy, takie jak przemyt, nielegalne połowy czy ryzyko kolizji. W tym artykule przyjrzymy się, jak nauczanie przez wzmacnianie (Reinforcement Learning, RL) może zrewolucjonizować wykrywanie anomalii w ruchu morskim, a także pokażemy prosty przykład implementacji w Pythonie.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;czym-jest-nauczanie-przez-wzmacnianie&quot;&gt;Czym jest nauczanie przez wzmacnianie?&lt;&#x2F;h2&gt;
+&lt;p&gt;Nauczanie przez wzmacnianie to dziedzina uczenia maszynowego, w której agent uczy się podejmować decyzje poprzez interakcję ze środowiskiem. Agent wykonuje akcje, obserwuje ich skutki (stan środowiska i nagrodę), a następnie optymalizuje swoją strategię, by maksymalizować przyszłe nagrody. W kontekście danych AIS, RL może analizować strumień informacji o ruchu statków, ucząc się odróżniać normalne trajektorie od potencjalnych anomalii, takich jak nagłe zmiany kursu czy prędkości.&lt;&#x2F;p&gt;
+&lt;p&gt;Kluczowe elementy RL to:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Stan: Aktualne dane AIS, np. pozycja, prędkość, kurs.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Akcja: Klasyfikacja ruchu jako normalnego lub anomalnego.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Nagroda: Sygnał zwrotny, np. +1 za poprawną identyfikację anomalii, -1 za błąd.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Polityka: Strategia agenta określająca, jakie akcje podejmować w danym stanie.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;dlaczego-rl-w-wykrywaniu-anomalii-morskich&quot;&gt;Dlaczego RL w wykrywaniu anomalii morskich?&lt;&#x2F;h2&gt;
+&lt;p&gt;Tradycyjne metody wykrywania anomalii, takie jak algorytmy statystyczne czy uczenie nienadzorowane, mają swoje ograniczenia. Wymagają one często dużych ilości oznakowanych danych lub zakładają statyczność wzorców ruchu. RL oferuje unikalne zalety:
+Adaptacyjność: Agent uczy się w czasie rzeczywistym, dostosowując się do zmieniających się warunków, np. nowych szlaków żeglugowych.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Minimalna potrzeba etykiet: RL może działać z ograniczonym feedbackiem, ucząc się na podstawie nagród.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Sekwencyjność: Idealnie nadaje się do analizy trajektorii, gdzie decyzje zależą od wcześniejszych stanów.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Przykłady zastosowań RL w danych AIS obejmują:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Wykrywanie nielegalnych działań: Identyfikacja statków wyłączających AIS (tzw. &quot;going dark&quot;) w podejrzanych strefach.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Zapobieganie kolizjom: Rozpoznawanie nietypowych manewrów w zatłoczonych szlakach.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Monitorowanie środowiska: Wykrywanie potencjalnych zrzutów odpadów w obszarach chronionych, np. na Morzu Bałtyckim.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;jak-to-dziala-prosty-przyklad-w-pythonie&quot;&gt;Jak to działa? Prosty przykład w Pythonie&lt;&#x2F;h2&gt;
+&lt;p&gt;Stworzyłem prototypowy system w Pythonie, który demonstruje zastosowanie RL do wykrywania anomalii w danych AIS. Poniżej opisujemy, jak działa nasz kod i jakie możliwości oferuje.&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Generator danych AIS&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;Nasz system generuje syntetyczne trajektorie statku, zawierające:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Pozycję (szerokość i długość geograficzna),&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Prędkość (w węzłach),&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Kurs (w stopniach),&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Czas (w sekundach).&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Normalne ruchy symulują płynną żeglugę z niewielkimi zmianami prędkości i kursu, podczas gdy anomalie to nagłe zmiany, np. zwrot o 90° lub skok prędkości o ±5 węzłów. Anomalie występują z prawdopodobieństwem 10%, co odzwierciedla rzadkość takich zdarzeń w rzeczywistości.&lt;&#x2F;p&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;Środowisko RL&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;Użyłem biblioteki gym, aby stworzyć środowisko, w którym:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Stan: Wektor danych AIS [lat, lon, speed, course, time].&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Akcje: Klasyfikacja punktu jako normalnego (0) lub anomalnego (1).&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Nagroda: +1 za poprawną klasyfikację, -1 za błędną.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;Agent Q-learning&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;Zaimplementowałem prosty algorytm Q-learning, który uczy się poprzez aktualizację Q-tabeli. Agent balansuje między eksploracją (losowe akcje) a eksploatacją (wybór najlepszej akcji na podstawie dotychczasowej wiedzy). Choć Q-learning jest podstawowym algorytmem, dobrze ilustruje koncepcję RL w tym zastosowaniu.&lt;&#x2F;p&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;Wizualizacja i wyniki&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;Po przeszkoleniu agenta generujemy wykres trajektorii, gdzie:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Niebieskie punkty oznaczają normalny ruch.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Czerwone krzyżyki wskazują prawdziwe anomalie.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Zielone kółka pokazują anomalie przewidziane przez agenta.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Przykładowy wynik pokazuje dokładność wykrywania anomalii na poziomie 90-97% po 100 epizodach treningu. Trajektoria i predykcje są zapisywane do pliku CSV, co ułatwia dalszą analizę.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;wyzwania-i-przyszlosc-rl-w-danych-ais&quot;&gt;Wyzwania i przyszłość RL w danych AIS&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;przyklady-zastosowan-w-praktyce&quot;&gt;Przykłady zastosowań w praktyce&lt;&#x2F;h2&gt;
+&lt;p&gt;Gdzie to działa?&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Kryptowaluty: Sentyment z X + dane rynkowe = prognoza, czy Bitcoin poleci w górę czy w dół.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Bezpieczeństwo IT: Wzrost błędów w logach + newsy o cyberatakach = wczesne ostrzeżenie.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;wyzwania-i-pulapki-w-analizie-zdarzen&quot;&gt;Wyzwania i pułapki w analizie zdarzeń&lt;&#x2F;h2&gt;
+&lt;p&gt;Mimo obiecujących wyników, prototyp ma ograniczenia:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Uproszczony model: Syntetyczne dane nie uwzględniają złożoności rzeczywistych warunków morskich, takich jak prądy czy przepisy żeglugowe.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Skalowalność: Q-learning nie radzi sobie dobrze z ciągłymi danymi AIS. Zaawansowane algorytmy, jak Deep Q-Networks (DQN) czy Proximal Policy Optimization (PPO), mogą poprawić wyniki.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Rzadkość anomalii: Anomalie są rzadkie, co utrudnia projektowanie funkcji nagrody i wymaga starannego balansowania eksploracji.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Przyszłe prace mogą obejmować:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Integrację z rzeczywistymi danymi AIS: Wykorzystanie bibliotek takich jak pyais lub API MarineTraffic do analizy prawdziwych trajektorii.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Zaawansowane algorytmy RL: Zastosowanie DQN lub PPO dla lepszej obsługi dużych i ciągłych danych.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Mapy w tle: Użycie bibliotek jak folium do wizualizacji trajektorii na rzeczywistych mapach morskich.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Dynamiczne nagrody: Włączenie feedbacku od ekspertów morskich, np. straży przybrzeżnej, do projektowania nagród.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;zastosowania-w-praktyce&quot;&gt;Zastosowania w praktyce&lt;&#x2F;h2&gt;
+&lt;p&gt;RL w wykrywaniu anomalii AIS ma ogromny potencjał:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Bezpieczeństwo morskie: Wykrywanie statków dryfujących lub w tarapatach, np. w Zatoce Meksykańskiej.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Ochrona środowiska: Monitorowanie zrzutów odpadów w obszarach chronionych, jak Morze Bałtyckie.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Walka z przemytem: Identyfikacja podejrzanych trajektorii w regionach takich jak Morze Południowochińskie.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Przykładem sukcesu jest projekt Global Fishing Watch, który już wykorzystuje uczenie maszynowe do monitorowania nielegalnych połowów na podstawie danych AIS. RL może dodatkowo zwiększyć skuteczność takich systemów, adaptując się do nowych wzorców w czasie rzeczywistym.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;podsumowanie&quot;&gt;Podsumowanie&lt;&#x2F;h2&gt;
+&lt;p&gt;Nauczanie przez wzmacnianie otwiera nowe możliwości w analizie danych AIS, umożliwiając dynamiczne i adaptacyjne wykrywanie anomalii w ruchu morskim. Nasz prosty prototyp w Pythonie pokazuje, jak RL może klasyfikować nietypowe zachowania statków, osiągając wysoką dokładność przy minimalnych wymaganiach dotyczących danych. Choć przed nami jeszcze wiele wyzwań, takich jak skalowalność i integracja z rzeczywistymi danymi, RL ma szansę stać się kluczowym narzędziem w nowoczesnym monitorowaniu mórz.
+Chcesz wypróbować nasz kod? Pobierz go z repozytorium GitHub (#) i podziel się swoimi pomysłami na ulepszenia! A może masz własne dane AIS? Skontaktuj się z nami, by omówić, jak RL może pomóc w Twoim projekcie.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;link-do-projektu&quot;&gt;Link do projektu&lt;&#x2F;h2&gt;
+&lt;p&gt;Poniżej znajduje się repozytorium związane z zagadnieniem o którym była mowa.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;BobakMariusz&#x2F;reinforcement-learning&quot;&gt;Link do repozytorium&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="pl">
         <title>Automatyczna analiza oraz korelacja zdarzeń</title>
         <published>2025-03-22T00:00:00+00:00</published>
@@ -24,11 +201,11 @@
         <id>https://bobakmariusz.github.io/post-1/</id>
         
         <content type="html" xml:base="https://bobakmariusz.github.io/post-1/">&lt;p&gt;Czy zastanawiałeś się kiedyś, jak przewidzieć blackout w sieci energetycznej albo skok kursu Bitcoina po jednym tweecie Elona Muska? Odpowiedź leży w automatycznej analizie zdarzeń i ich korelacji. W tym poście pokażę Ci, jak technologia może znaleźć związki tam, gdzie na pierwszy rzut oka ich nie widać, i jak wykorzystać to do przewidywania przyszłości.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;wprowadzenie-do-automatycznej-analizy-zdarzen&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#wprowadzenie-do-automatycznej-analizy-zdarzen&quot; aria-label=&quot;Anchor link for: wprowadzenie-do-automatycznej-analizy-zdarzen&quot;&gt;Wprowadzenie do automatycznej analizy zdarzeń&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;wprowadzenie-do-automatycznej-analizy-zdarzen&quot;&gt;Wprowadzenie do automatycznej analizy zdarzeń&lt;&#x2F;h2&gt;
 &lt;p&gt;Wyobraź sobie, że masz tysiące danych: czujniki w elektrowni, wpisy na X-ie, nagłówki prasowe. Ręczne ich analizowanie to jak szukanie igły w stogu siana – tylko że stóg rośnie z każdą minutą. Automatyczna analiza zdarzeń to sposób na to, by maszyny zrobiły to za nas: szybko, dokładnie i bez kawy na podtrzymanie. Dzięki niej możemy nie tylko zrozumieć, co się dzieje, ale też znaleźć powiązania między tymi danymi – czyli przejść do korelacji.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;czym-jest-korelacja-zdarzen-i-dlaczego-ma-znaczenie&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#czym-jest-korelacja-zdarzen-i-dlaczego-ma-znaczenie&quot; aria-label=&quot;Anchor link for: czym-jest-korelacja-zdarzen-i-dlaczego-ma-znaczenie&quot;&gt;Czym jest korelacja zdarzeń i dlaczego ma znaczenie ?&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;czym-jest-korelacja-zdarzen-i-dlaczego-ma-znaczenie&quot;&gt;Czym jest korelacja zdarzeń i dlaczego ma znaczenie ?&lt;&#x2F;h2&gt;
 &lt;p&gt;Korelacja to po prostu miara zależności między dwoma rzeczami. Jeśli temperatura w elektrowni rośnie, a zaraz potem wysiada system chłodzenia – to korelacja. Jeśli Elon tweetuje &quot;Dogecoin!&quot;, a kurs skacze o 20% – to też korelacja. Brzmi prosto, ale diabeł tkwi w szczegółach. Korelacja może być liniowa (prosta jak linijka) albo nieliniowa (krzywa jak rollercoaster). Dlaczego to ważne? Bo zrozumienie tych związków to pierwszy krok do przewidywania, co będzie dalej.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;zrodla-danych-od-czujnikow-po-media-spolecznosciowe&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#zrodla-danych-od-czujnikow-po-media-spolecznosciowe&quot; aria-label=&quot;Anchor link for: zrodla-danych-od-czujnikow-po-media-spolecznosciowe&quot;&gt;Źródła danych: Od czujników po media społecznościowe&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;zrodla-danych-od-czujnikow-po-media-spolecznosciowe&quot;&gt;Źródła danych: Od czujników po media społecznościowe&lt;&#x2F;h2&gt;
 &lt;p&gt;Dane to paliwo analizy, a źródeł mamy pod dostatkiem:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -43,7 +220,7 @@
 &lt;&#x2F;ul&gt;
 &lt;p&gt;Problem? Każde źródło mówi innym językiem. Czujniki dają liczby, X – emocje, a prasa – historie.
 Połączenie ich to jak dogadanie się psa z kotem – trudne, ale możliwe.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;narzedzia-i-technologie-do-analizy-zdarzen&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#narzedzia-i-technologie-do-analizy-zdarzen&quot; aria-label=&quot;Anchor link for: narzedzia-i-technologie-do-analizy-zdarzen&quot;&gt;Narzędzia i technologie do analizy zdarzeń&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;narzedzia-i-technologie-do-analizy-zdarzen&quot;&gt;Narzędzia i technologie do analizy zdarzeń&lt;&#x2F;h2&gt;
 &lt;p&gt;Żeby ogarnąć ten bałagan, potrzebujemy odpowiednich narzędzi:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -59,7 +236,7 @@ Połączenie ich to jak dogadanie się psa z kotem – trudne, ale możliwe.&lt;
 &lt;p&gt;Sieci neuronowe: Gdy zwykła matematyka nie wystarczy, one znajdują nieliniowe związki.&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;metody-wiazania-zdarzen-z-roznych-zrodel&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#metody-wiazania-zdarzen-z-roznych-zrodel&quot; aria-label=&quot;Anchor link for: metody-wiazania-zdarzen-z-roznych-zrodel&quot;&gt;Metody wiązania zdarzeń z różnych źródeł&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;metody-wiazania-zdarzen-z-roznych-zrodel&quot;&gt;Metody wiązania zdarzeń z różnych źródeł&lt;&#x2F;h2&gt;
 &lt;p&gt;Jak sprawić, by dane z czujników i X-a zaczęły ze sobą rozmawiać? Oto kilka trików:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -73,10 +250,10 @@ Połączenie ich to jak dogadanie się psa z kotem – trudne, ale możliwe.&lt;
 &lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;Przykład? Tweet &quot;BTC pump!&quot; o 9:00 i wzrost kursu o 9:05 – korelacja krzyżowa pokaże, że reakcja trwa 5 minut.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;od-korelacji-do-predykcji-jak-przewidywac-przyszlosc&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#od-korelacji-do-predykcji-jak-przewidywac-przyszlosc&quot; aria-label=&quot;Anchor link for: od-korelacji-do-predykcji-jak-przewidywac-przyszlosc&quot;&gt;Od korelacji do predykcji: Jak przewidywać przyszłość?&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;od-korelacji-do-predykcji-jak-przewidywac-przyszlosc&quot;&gt;Od korelacji do predykcji: Jak przewidywać przyszłość?&lt;&#x2F;h2&gt;
 &lt;p&gt;Znalazłeś korelację – co dalej? Czas na predykcję! Jeśli wiemy, że pozytywne X-y podnoszą kurs kryptowaluty, możemy użyć sieci neuronowych (np. LSTM), by przewidzieć, co będzie jutro.
 Albo jeśli wysoka temperatura w elektrowni koreluje z awariami, system może ostrzec: &quot;Uwaga, za godzinę blackout!&quot;. To jak kryształowa kula, tylko oparta na danych, a nie magii.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;przyklady-zastosowan-w-praktyce&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#przyklady-zastosowan-w-praktyce&quot; aria-label=&quot;Anchor link for: przyklady-zastosowan-w-praktyce&quot;&gt;Przykłady zastosowań w praktyce&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;przyklady-zastosowan-w-praktyce&quot;&gt;Przykłady zastosowań w praktyce&lt;&#x2F;h2&gt;
 &lt;p&gt;Gdzie to działa?&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -86,7 +263,7 @@ Albo jeśli wysoka temperatura w elektrowni koreluje z awariami, system może os
 &lt;p&gt;Bezpieczeństwo IT: Wzrost błędów w logach + newsy o cyberatakach = wczesne ostrzeżenie.&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;wyzwania-i-pulapki-w-analizie-zdarzen&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#wyzwania-i-pulapki-w-analizie-zdarzen&quot; aria-label=&quot;Anchor link for: wyzwania-i-pulapki-w-analizie-zdarzen&quot;&gt;Wyzwania i pułapki w analizie zdarzeń&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;wyzwania-i-pulapki-w-analizie-zdarzen&quot;&gt;Wyzwania i pułapki w analizie zdarzeń&lt;&#x2F;h2&gt;
 &lt;p&gt;Nie wszystko jest różowe:&lt;&#x2F;p&gt;
 &lt;p&gt;Szum: X pełen jest żartów i plotek – jak odróżnić sygnał od hałasu?&lt;&#x2F;p&gt;
 &lt;ul&gt;
@@ -98,11 +275,11 @@ Albo jeśli wysoka temperatura w elektrowni koreluje z awariami, system może os
 &lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;Klucz to ostrożność i weryfikacja – dane kłamią częściej, niż myślisz.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;przyszlosc-automatycznej-analizy-zdarzen&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#przyszlosc-automatycznej-analizy-zdarzen&quot; aria-label=&quot;Anchor link for: przyszlosc-automatycznej-analizy-zdarzen&quot;&gt;Przyszłość automatycznej analizy zdarzeń&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;przyszlosc-automatycznej-analizy-zdarzen&quot;&gt;Przyszłość automatycznej analizy zdarzeń&lt;&#x2F;h2&gt;
 &lt;p&gt;Co przyniesie jutro? Sztuczna inteligencja, jak duże modele językowe (LLM), już teraz potrafi analizować sentyment i znajdować wzorce w chaosie.
 Za kilka lat możemy mieć systemy, które przewidzą awarię sieci, zanim inżynier włoży buty, albo portfel kryptowalutowy, który sam kupuje BTC, gdy X szaleje.
 Brzmi futurystycznie? To tylko kwestia czasu.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;jak-powiedzial-tak-zrobil&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#jak-powiedzial-tak-zrobil&quot; aria-label=&quot;Anchor link for: jak-powiedzial-tak-zrobil&quot;&gt;Jak powiedział tak zrobił&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;jak-powiedzial-tak-zrobil&quot;&gt;Jak powiedział tak zrobił&lt;&#x2F;h2&gt;
 &lt;p&gt;Poniżej znajduje się repozytorium związane z zagadnieniem o którym była mowa.&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;BobakMariusz&#x2F;events-correlations&#x2F;tree&#x2F;main&quot;&gt;Link do repozytorium&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;

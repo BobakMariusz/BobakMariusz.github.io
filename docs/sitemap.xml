@@ -10,11 +10,18 @@
         <loc>https://bobakmariusz.github.io/categories/ai/</loc>
     </url>
     <url>
+        <loc>https://bobakmariusz.github.io/categories/rl/</loc>
+    </url>
+    <url>
         <loc>https://bobakmariusz.github.io/page/1/</loc>
     </url>
     <url>
         <loc>https://bobakmariusz.github.io/post-1/</loc>
         <lastmod>2025-03-22</lastmod>
+    </url>
+    <url>
+        <loc>https://bobakmariusz.github.io/post-2/</loc>
+        <lastmod>2025-06-08</lastmod>
     </url>
     <url>
         <loc>https://bobakmariusz.github.io/tags/</loc>
@@ -30,6 +37,12 @@
     </url>
     <url>
         <loc>https://bobakmariusz.github.io/tags/lstm/</loc>
+    </url>
+    <url>
+        <loc>https://bobakmariusz.github.io/tags/nauczanie-przez-wzmacnianie/</loc>
+    </url>
+    <url>
+        <loc>https://bobakmariusz.github.io/tags/rl/</loc>
     </url>
     <url>
         <loc>https://bobakmariusz.github.io/tags/sieci-neuronowe/</loc>
