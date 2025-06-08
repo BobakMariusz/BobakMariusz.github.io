@@ -211,7 +211,7 @@
     <div itemprop="articleBody">
         
             <!-- If no summary separate from content, just render content -->
-            <p>W dzisiejszym świecie, gdzie transport morski odpowiada za ponad 80% globalnego handlu, monitorowanie ruchu statków jest kluczowe dla zapewnienia bezpieczeństwa, ochrony środowiska i przeciwdziałania nielegalnym działaniom. System AIS (Automatic Identification System) dostarcza szczegółowych danych o pozycji, prędkości i kursie jednostek pływających, umożliwiając analizę ich trajektorii w czasie rzeczywistym. Jednak w ogromie tych danych kryją się potencjalne anomalie – nietypowe manewry, wyłączanie nadajników AIS czy dryfowanie – które mogą wskazywać na problemy, takie jak przemyt, nielegalne połowy czy ryzyko kolizji. W tym artykule przyjrzymy się, jak nauczanie przez wzmacnianie (Reinforcement Learning, RL) może zrewolucjonizować wykrywanie anomalii w ruchu morskim, a także pokażemy prosty przykład implementacji w Pythonie.</p>
+            <p>W dzisiejszym świecie, gdzie transport morski odpowiada za ponad 80% globalnego handlu, monitorowanie ruchu statków jest kluczowe dla zapewnienia bezpieczeństwa, ochrony środowiska i przeciwdziałania nielegalnym działaniom. System AIS (Automatic Identification System) dostarcza szczegółowych danych o pozycji, prędkości i kursie jednostek pływających, umożliwiając analizę ich trajektorii w czasie rzeczywistym. Jednak w ogromie tych danych kryją się potencjalne anomalie – nietypowe manewry, wyłączanie nadajników AIS czy dryfowanie – które mogą wskazywać na problemy, takie jak przemyt, nielegalne połowy czy ryzyko kolizji. W tym artykule przyjrzymy się, jak nauczanie przez wzmacnianie (Reinforcement Learning, RL) może zrewolucjonizować wykrywanie anomalii w ruchu morskim, a także pokaże prosty przykład implementacji w Pythonie.</p>
 <h2 id="czym-jest-nauczanie-przez-wzmacnianie">Czym jest nauczanie przez wzmacnianie?</h2>
 <p>Nauczanie przez wzmacnianie to dziedzina uczenia maszynowego, w której agent uczy się podejmować decyzje poprzez interakcję ze środowiskiem. Agent wykonuje akcje, obserwuje ich skutki (stan środowiska i nagrodę), a następnie optymalizuje swoją strategię, by maksymalizować przyszłe nagrody. W kontekście danych AIS, RL może analizować strumień informacji o ruchu statków, ucząc się odróżniać normalne trajektorie od potencjalnych anomalii, takich jak nagłe zmiany kursu czy prędkości.</p>
 <p>Kluczowe elementy RL to:</p>
@@ -220,7 +220,7 @@
 <p>Stan: Aktualne dane AIS, np. pozycja, prędkość, kurs.</p>
 </li>
 <li>
-<p>Akcja: Klasyfikacja ruchu jako normalnego lub anomalnego.</p>
+<p>Akcja: Klasyfikacja ruchu jako normalnego lub nie normalnego (anomalia).</p>
 </li>
 <li>
 <p>Nagroda: Sygnał zwrotny, np. +1 za poprawną identyfikację anomalii, -1 za błąd.</p>
@@ -230,9 +230,11 @@
 </li>
 </ul>
 <h2 id="dlaczego-rl-w-wykrywaniu-anomalii-morskich">Dlaczego RL w wykrywaniu anomalii morskich?</h2>
-<p>Tradycyjne metody wykrywania anomalii, takie jak algorytmy statystyczne czy uczenie nienadzorowane, mają swoje ograniczenia. Wymagają one często dużych ilości oznakowanych danych lub zakładają statyczność wzorców ruchu. RL oferuje unikalne zalety:
-Adaptacyjność: Agent uczy się w czasie rzeczywistym, dostosowując się do zmieniających się warunków, np. nowych szlaków żeglugowych.</p>
+<p>Tradycyjne metody wykrywania anomalii, takie jak algorytmy statystyczne czy uczenie nienadzorowane, mają swoje ograniczenia. Wymagają one często dużych ilości oznakowanych danych lub zakładają statyczność wzorców ruchu. RL oferuje unikalne zalety:</p>
 <ul>
+<li>
+<p>Adaptacyjność: Agent uczy się w czasie rzeczywistym, dostosowując się do zmieniających się warunków, np. nowych szlaków żeglugowych.</p>
+</li>
 <li>
 <p>Minimalna potrzeba etykiet: RL może działać z ograniczonym feedbackiem, ucząc się na podstawie nagród.</p>
 </li>
@@ -243,17 +245,14 @@ Adaptacyjność: Agent uczy się w czasie rzeczywistym, dostosowując się do zm
 <p>Przykłady zastosowań RL w danych AIS obejmują:</p>
 <ul>
 <li>
-<p>Wykrywanie nielegalnych działań: Identyfikacja statków wyłączających AIS (tzw. "going dark") w podejrzanych strefach.</p>
+<p>Wykrywanie nielegalnych działań: Identyfikacja statków wyłączających AIS w podejrzanych strefach.</p>
 </li>
 <li>
 <p>Zapobieganie kolizjom: Rozpoznawanie nietypowych manewrów w zatłoczonych szlakach.</p>
 </li>
-<li>
-<p>Monitorowanie środowiska: Wykrywanie potencjalnych zrzutów odpadów w obszarach chronionych, np. na Morzu Bałtyckim.</p>
-</li>
 </ul>
 <h2 id="jak-to-dziala-prosty-przyklad-w-pythonie">Jak to działa? Prosty przykład w Pythonie</h2>
-<p>Stworzyłem prototypowy system w Pythonie, który demonstruje zastosowanie RL do wykrywania anomalii w danych AIS. Poniżej opisujemy, jak działa nasz kod i jakie możliwości oferuje.</p>
+<p>Na potrzeby blog posta stworzono prototypowy system w Pythonie, który demonstruje zastosowanie RL do wykrywania anomalii w danych AIS. Poniżej opisane jest, jak działa nasz kod i jakie możliwości oferuje.</p>
 <ol>
 <li>Generator danych AIS</li>
 </ol>
@@ -276,13 +275,13 @@ Adaptacyjność: Agent uczy się w czasie rzeczywistym, dostosowując się do zm
 <ol start="2">
 <li>Środowisko RL</li>
 </ol>
-<p>Użyłem biblioteki gym, aby stworzyć środowisko, w którym:</p>
+<p>Użyto biblioteki gym, aby stworzyć środowisko, w którym:</p>
 <ul>
 <li>
 <p>Stan: Wektor danych AIS [lat, lon, speed, course, time].</p>
 </li>
 <li>
-<p>Akcje: Klasyfikacja punktu jako normalnego (0) lub anomalnego (1).</p>
+<p>Akcje: Klasyfikacja punktu jako normalnego (0) lub nie normalnego (1).</p>
 </li>
 <li>
 <p>Nagroda: +1 za poprawną klasyfikację, -1 za błędną.</p>
@@ -291,11 +290,11 @@ Adaptacyjność: Agent uczy się w czasie rzeczywistym, dostosowując się do zm
 <ol start="3">
 <li>Agent Q-learning</li>
 </ol>
-<p>Zaimplementowałem prosty algorytm Q-learning, który uczy się poprzez aktualizację Q-tabeli. Agent balansuje między eksploracją (losowe akcje) a eksploatacją (wybór najlepszej akcji na podstawie dotychczasowej wiedzy). Choć Q-learning jest podstawowym algorytmem, dobrze ilustruje koncepcję RL w tym zastosowaniu.</p>
+<p>Zaimplementowano prosty algorytm Q-learning, który uczy się poprzez aktualizację Q-tabeli. Agent balansuje między eksploracją (losowe akcje) a eksploatacją (wybór najlepszej akcji na podstawie dotychczasowej wiedzy). Choć Q-learning jest podstawowym algorytmem, dobrze ilustruje koncepcję RL w tym zastosowaniu.</p>
 <ol start="4">
 <li>Wizualizacja i wyniki</li>
 </ol>
-<p>Po przeszkoleniu agenta generujemy wykres trajektorii, gdzie:</p>
+<p>Po przeszkoleniu agenta generowany jest wykres trajektorii, gdzie:</p>
 <ul>
 <li>
 <p>Niebieskie punkty oznaczają normalny ruch.</p>
@@ -309,18 +308,7 @@ Adaptacyjność: Agent uczy się w czasie rzeczywistym, dostosowując się do zm
 </ul>
 <p>Przykładowy wynik pokazuje dokładność wykrywania anomalii na poziomie 90-97% po 100 epizodach treningu. Trajektoria i predykcje są zapisywane do pliku CSV, co ułatwia dalszą analizę.</p>
 <h2 id="wyzwania-i-przyszlosc-rl-w-danych-ais">Wyzwania i przyszłość RL w danych AIS</h2>
-<h2 id="przyklady-zastosowan-w-praktyce">Przykłady zastosowań w praktyce</h2>
-<p>Gdzie to działa?</p>
-<ul>
-<li>
-<p>Kryptowaluty: Sentyment z X + dane rynkowe = prognoza, czy Bitcoin poleci w górę czy w dół.</p>
-</li>
-<li>
-<p>Bezpieczeństwo IT: Wzrost błędów w logach + newsy o cyberatakach = wczesne ostrzeżenie.</p>
-</li>
-</ul>
-<h2 id="wyzwania-i-pulapki-w-analizie-zdarzen">Wyzwania i pułapki w analizie zdarzeń</h2>
-<p>Mimo obiecujących wyników, prototyp ma ograniczenia:</p>
+<p>Mimo obiecujących wyników, prototyp wiele ograniczeń:</p>
 <ul>
 <li>
 <p>Uproszczony model: Syntetyczne dane nie uwzględniają złożoności rzeczywistych warunków morskich, takich jak prądy czy przepisy żeglugowe.</p>
@@ -341,9 +329,6 @@ Adaptacyjność: Agent uczy się w czasie rzeczywistym, dostosowując się do zm
 <p>Zaawansowane algorytmy RL: Zastosowanie DQN lub PPO dla lepszej obsługi dużych i ciągłych danych.</p>
 </li>
 <li>
-<p>Mapy w tle: Użycie bibliotek jak folium do wizualizacji trajektorii na rzeczywistych mapach morskich.</p>
-</li>
-<li>
 <p>Dynamiczne nagrody: Włączenie feedbacku od ekspertów morskich, np. straży przybrzeżnej, do projektowania nagród.</p>
 </li>
 </ul>
@@ -351,19 +336,18 @@ Adaptacyjność: Agent uczy się w czasie rzeczywistym, dostosowując się do zm
 <p>RL w wykrywaniu anomalii AIS ma ogromny potencjał:</p>
 <ul>
 <li>
-<p>Bezpieczeństwo morskie: Wykrywanie statków dryfujących lub w tarapatach, np. w Zatoce Meksykańskiej.</p>
+<p>Bezpieczeństwo morskie: Wykrywanie statków dryfujących lub w tarapatach.</p>
 </li>
 <li>
-<p>Ochrona środowiska: Monitorowanie zrzutów odpadów w obszarach chronionych, jak Morze Bałtyckie.</p>
+<p>Ochrona środowiska: Monitorowanie zrzutów odpadów w obszarach chronionych.</p>
 </li>
 <li>
-<p>Walka z przemytem: Identyfikacja podejrzanych trajektorii w regionach takich jak Morze Południowochińskie.</p>
+<p>Walka z przemytem: Identyfikacja podejrzanych trajektorii w podejrzanych regionach.</p>
 </li>
 </ul>
 <p>Przykładem sukcesu jest projekt Global Fishing Watch, który już wykorzystuje uczenie maszynowe do monitorowania nielegalnych połowów na podstawie danych AIS. RL może dodatkowo zwiększyć skuteczność takich systemów, adaptując się do nowych wzorców w czasie rzeczywistym.</p>
 <h2 id="podsumowanie">Podsumowanie</h2>
-<p>Nauczanie przez wzmacnianie otwiera nowe możliwości w analizie danych AIS, umożliwiając dynamiczne i adaptacyjne wykrywanie anomalii w ruchu morskim. Nasz prosty prototyp w Pythonie pokazuje, jak RL może klasyfikować nietypowe zachowania statków, osiągając wysoką dokładność przy minimalnych wymaganiach dotyczących danych. Choć przed nami jeszcze wiele wyzwań, takich jak skalowalność i integracja z rzeczywistymi danymi, RL ma szansę stać się kluczowym narzędziem w nowoczesnym monitorowaniu mórz.
-Chcesz wypróbować nasz kod? Pobierz go z repozytorium GitHub (#) i podziel się swoimi pomysłami na ulepszenia! A może masz własne dane AIS? Skontaktuj się z nami, by omówić, jak RL może pomóc w Twoim projekcie.</p>
+<p>Nauczanie przez wzmacnianie otwiera nowe możliwości w analizie danych AIS, umożliwiając dynaminaszczne i adaptacyjne wykrywanie anomalii w ruchu morskim. Przygotowany prosty prototyp w Pythonie pokazuje, jak RL może klasyfikować nietypowe zachowania statków, osiągając wysoką dokładność przy minimalnych wymaganiach dotyczących danych. Choć przed projektem jest jeszcze wiele wyzwań, takich jak skalowalność i integracja z rzeczywistymi danymi, RL ma szansę stać się kluczowym narzędziem w nowoczesnym monitorowaniu mórz.</p>
 <h2 id="link-do-projektu">Link do projektu</h2>
 <p>Poniżej znajduje się repozytorium związane z zagadnieniem o którym była mowa.</p>
 <ul>
