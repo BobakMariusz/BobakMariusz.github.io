@@ -64,11 +64,11 @@
 &lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;jak-to-dziala-prosty-przyklad-w-pythonie&quot;&gt;Jak to działa? Prosty przykład w Pythonie&lt;&#x2F;h2&gt;
-&lt;p&gt;Na potrzeby blog posta stworzono prototypowy system w Pythonie, który demonstruje zastosowanie RL do wykrywania anomalii w danych AIS. Poniżej opisane jest, jak działa nasz kod i jakie możliwości oferuje.&lt;&#x2F;p&gt;
+&lt;p&gt;Na potrzeby blog posta stworzono prototypowy system w Pythonie, który demonstruje zastosowanie RL do wykrywania anomalii w danych AIS. Poniżej opisane jest, jak działa kod i jakie możliwości oferuje.&lt;&#x2F;p&gt;
 &lt;ol&gt;
 &lt;li&gt;Generator danych AIS&lt;&#x2F;li&gt;
 &lt;&#x2F;ol&gt;
-&lt;p&gt;Nasz system generuje syntetyczne trajektorie statku, zawierające:&lt;&#x2F;p&gt;
+&lt;p&gt;System generuje syntetyczne trajektorie statku, zawierające:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Pozycję (szerokość i długość geograficzna),&lt;&#x2F;p&gt;
@@ -120,7 +120,7 @@
 &lt;&#x2F;ul&gt;
 &lt;p&gt;Przykładowy wynik pokazuje dokładność wykrywania anomalii na poziomie 90-97% po 100 epizodach treningu. Trajektoria i predykcje są zapisywane do pliku CSV, co ułatwia dalszą analizę.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;wyzwania-i-przyszlosc-rl-w-danych-ais&quot;&gt;Wyzwania i przyszłość RL w danych AIS&lt;&#x2F;h2&gt;
-&lt;p&gt;Mimo obiecujących wyników, prototyp wiele ograniczeń:&lt;&#x2F;p&gt;
+&lt;p&gt;Mimo obiecujących wyników, prototyp posiada wiele ograniczeń:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Uproszczony model: Syntetyczne dane nie uwzględniają złożoności rzeczywistych warunków morskich, takich jak prądy czy przepisy żeglugowe.&lt;&#x2F;p&gt;
