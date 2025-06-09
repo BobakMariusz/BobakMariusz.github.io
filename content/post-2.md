@@ -50,12 +50,12 @@ Przykłady zastosowań RL w danych AIS obejmują:
 
 ## Jak to działa? Prosty przykład w Pythonie
 
-Na potrzeby blog posta stworzono prototypowy system w Pythonie, który demonstruje zastosowanie RL do wykrywania anomalii w danych AIS. Poniżej opisane jest, jak działa nasz kod i jakie możliwości oferuje.
+Na potrzeby blog posta stworzono prototypowy system w Pythonie, który demonstruje zastosowanie RL do wykrywania anomalii w danych AIS. Poniżej opisane jest, jak działa kod i jakie możliwości oferuje.
 
 
 1. Generator danych AIS
 
-Nasz system generuje syntetyczne trajektorie statku, zawierające:
+System generuje syntetyczne trajektorie statku, zawierające:
 
 - Pozycję (szerokość i długość geograficzna),
 
@@ -99,7 +99,7 @@ Przykładowy wynik pokazuje dokładność wykrywania anomalii na poziomie 90-97%
 
 ## Wyzwania i przyszłość RL w danych AIS
 
-Mimo obiecujących wyników, prototyp wiele ograniczeń:
+Mimo obiecujących wyników, prototyp posiada wiele ograniczeń:
 
 - Uproszczony model: Syntetyczne dane nie uwzględniają złożoności rzeczywistych warunków morskich, takich jak prądy czy przepisy żeglugowe.
 
