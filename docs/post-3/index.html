@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="pl-PL">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <!-- Enable responsiveness on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+    <meta name="description" content="Blog na temat technologii - w sczególności o architekturze, sieciach neuronowych oraz wszechobecnej sztucznej inteligencji" />
+    <meta property="og:description" content="Blog na temat technologii - w sczególności o architekturze, sieciach neuronowych oraz wszechobecnej sztucznej inteligencji" />
+    <meta property="twitter:description" content="Blog na temat technologii - w sczególności o architekturze, sieciach neuronowych oraz wszechobecnej sztucznej inteligencji" />
+    
+
+    <!-- Title -->
+      
+
+    <title>
+    
+    Przewidywanie Trajektorii Okrętów z Wykorzystaniem Sztucznej Inteligencji: Analiza Danych AIS
+    
+</title>
+
+    <!-- Additional Facebook Meta Tags -->
+    <meta
+      property="og:url"
+      content="https:&#x2F;&#x2F;bobakmariusz.github.io&#x2F;post-3&#x2F;"
+    />
+    <meta
+      property="og:type"
+      content="article"
+    />
+    <meta property="og:title" content="Przewidywanie Trajektorii Okrętów z Wykorzystaniem Sztucznej Inteligencji: Analiza Danych AIS" />
+    <meta
+      property="og:image"
+      content="https:&#x2F;&#x2F;bobakmariusz.github.io/icons/favicon/web-app-manifest-512x512.png"
+    />
+
+    <!-- Additional Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https:&#x2F;&#x2F;bobakmariusz.github.io&#x2F;post-3&#x2F;"
+    />
+    <meta name="twitter:title" content="Przewidywanie Trajektorii Okrętów z Wykorzystaniem Sztucznej Inteligencji: Analiza Danych AIS" />
+    <meta
+      name="twitter:image"
+      content="https:&#x2F;&#x2F;bobakmariusz.github.io/icons/favicon/web-app-manifest-512x512.png"
+    />
+
+    <!-- Favicons -->
+    
+    <link
+      rel="icon"
+      type="image/png"
+      href="https:&#x2F;&#x2F;bobakmariusz.github.io/icons/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https:&#x2F;&#x2F;bobakmariusz.github.io/icons/favicon/favicon.svg"
+    />
+    <link
+      rel="shortcut icon"
+      href="https:&#x2F;&#x2F;bobakmariusz.github.io/icons/favicon/favicon.ico"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https:&#x2F;&#x2F;bobakmariusz.github.io/icons/favicon/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="Przewidywanie Trajektorii Okrętów z Wykorzystaniem Sztucznej Inteligencji: Analiza Danych AIS" />
+    <link
+      rel="manifest"
+      href="https:&#x2F;&#x2F;bobakmariusz.github.io/icons/favicon/site.webmanifest"
+    />
+    
+
+    <!-- RSS Feed -->
+    
+    <link
+      rel="alternate"
+      type="application/atom+xml"
+      title="RSS"
+      href="https://bobakmariusz.github.io/atom.xml"
+    />
+    
+
+    <!-- Load Styles -->
+    <link
+      rel="stylesheet"
+      href="https://bobakmariusz.github.io/site.css"
+    />
+
+    <!-- Pass Theme Preference as Data Attribute -->
+    <script>
+      document.documentElement.dataset.theme =
+        "toggle";
+    </script>
+  </head>
+
+  <body class="hack dark main container">
+    
+    
+         
+    <header class="nav-header">
+      <nav
+        itemscope
+        itemtype="http://schema.org/SiteNavigationElement"
+        class="navbar"
+      >
+        <div class="nav-links">
+          
+          <a
+            itemprop="url"
+            class=""
+            href="https://bobakmariusz.github.io"
+          >
+            <span itemprop="name">Strona główna</span>
+          </a>
+          
+          <a
+            itemprop="url"
+            class=""
+            href="https://bobakmariusz.github.io/categories"
+          >
+            <span itemprop="name">Kategorie</span>
+          </a>
+          
+          <a
+            itemprop="url"
+            class=""
+            href="https://bobakmariusz.github.io/tags"
+          >
+            <span itemprop="name">Tagi</span>
+          </a>
+          
+        </div>
+  </ul>
+      </nav>
+      <div class="user-actions-container">
+         
+        <a id="dark-mode-toggle" href="#">
+          <img
+            src="https://bobakmariusz.github.io/icons/sun.svg"
+            id="sun-icon"
+            style="filter: invert(1)"
+            alt="Light mode"
+          />
+          <img
+            src="https://bobakmariusz.github.io/icons/moon.svg"
+            id="moon-icon"
+            alt="Dark mode"
+          />
+        </a>
+         
+        <a
+          href="https://bobakmariusz.github.io/atom.xml"
+          class="feed-icon"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="https://bobakmariusz.github.io/icons/rss.svg"
+            id="rss-icon"
+            alt="RSS feed"
+            class="social-icon"
+          />
+        </a>
+         
+        <a
+          href="https:&#x2F;&#x2F;github.com&#x2F;BobakMariusz"
+          class="feed-icon"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="https://bobakmariusz.github.io/icons/github.svg"
+            id="github-icon"
+            alt="GitHub"
+            class="social-icon"
+          />
+        </a>
+        
+      </div>
+    </header>
+     
+    
+
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        <h1 itemprop="headline">Przewidywanie Trajektorii Okrętów z Wykorzystaniem Sztucznej Inteligencji: Analiza Danych AIS</h1>
+        <span class="muted">
+    <svg class="icon i-clock" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <circle cx="16" cy="16" r="14"/>
+        <path d="M16 8 L16 16 20 20"/>
+    </svg>
+    <span>4 minute read</span>
+    <svg class="icon i-edit" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <path d="M30 7 L25 2 5 22 3 29 10 27 Z M21 6 L26 11 Z M5 22 L10 27 Z"/>
+    </svg>
+
+    Published: 2025-09-30
+</span>
+    </header>
+
+    <div itemprop="articleBody">
+        
+            <!-- If no summary separate from content, just render content -->
+            <p>W dzisiejszych czasach systemy AIS (Automatic Identification System) rewolucjonizują zarządzanie ruchem morskim, zapewniając bezpieczeństwo i efektywność na morzach. Wykorzystując dane GPS, systemy te pozwalają statkom nadawać informacje o swojej pozycji, kursie i prędkości. Jednak dane AIS to nie tylko narzędzie do monitorowania bieżącej sytuacji – mogą być kluczem do przewidywania przyszłych lokalizacji jednostek, co otwiera drzwi do budowy zaawansowanych systemów wczesnego ostrzegania, np. w ochronie infrastruktury morskiej. W tym artykule przybliżymy, jak sztuczna inteligencja (AI), a konkretnie sieci neuronowe LSTM i Transformer, może zostać wykorzystana do przewidywania trajektorii okrętów na podstawie danych AIS.</p>
+<h2 id="cel-i-metodologia-badan">Cel i metodologia badań</h2>
+<p>Celem badania było zbadanie i porównanie efektywności dwóch modeli sztucznej inteligencji – sieci LSTM (Long Short-Term Memory) oraz Transformerów – w przewidywaniu przyszłych pozycji okrętów na podstawie danych AIS. Kluczowe pytanie brzmiało: czy współczesne metody AI są w stanie sprostać wyzwaniom związanym z przewidywaniem ruchu jednostek morskich?Dane do analizy pochodziły z publicznie dostępnego zbioru AIS (https://web.ais.dk/aisdata/aisdk-2025-01-01.zip), obejmującego informacje z 1 stycznia 2025 roku. Zbiór zawierał takie parametry jak znacznik czasu, pozycja geograficzna (długość i szerokość), prędkość względem ziemi (SOG), kurs względem ziemi (COG) oraz unikalny identyfikator MMSI.</p>
+<h2 id="przygotowanie-danych-inzynieria-cech-i-czyszczenie">Przygotowanie danych: Inżynieria cech i czyszczenie</h2>
+<p>Pierwszym krokiem w analizie było przygotowanie danych, co obejmowało inżynierię cech i czyszczenie zbioru. Dane AIS często zawierają braki – w analizowanym zbiorze brakowało około 8,5% wartości SOG i 15% COG. Aby uzupełnić te luki, wykorzystano wzór Haversine’a do obliczania prędkości (SOG) na podstawie różnic w pozycjach i czasie, a COG wyznaczono na podstawie azymutu między punktami. Dzięki temu zredukowano brakujące wartości SOG do zaledwie 0,5%.Kolejnym etapem było przekształcenie współrzędnych geograficznych z układu EPSG:4326 (długość i szerokość geograficzna) na EPSG:4978, który lepiej odwzorowuje ruch w przestrzeni trójwymiarowej (X, Y, Z). Dodano także składowe prędkości w osiach X i Y (vx, vy), obliczone na podstawie SOG i COG, co wzbogaciło zbiór danych o informacje kluczowe dla modeli uczenia maszynowego.Dane zostały podzielone na 60-minutowe segmenty, próbkowane co 1 sekundę z interpolacją liniową, a następnie znormalizowane za pomocą MinMaxScaler, aby wartości cech (X, Y, Z, SOG, COG, vx, vy) mieściły się w przedziale [0, 1]. Finalny zbiór danych podzielono na: 70% do treningu, 15% do walidacji i 15% do testów.</p>
+<h2 id="modele-ai-lstm-i-transformer">Modele AI: LSTM i Transformer</h2>
+<p>Do przewidywania pozycji okrętów wykorzystano dwa modele:</p>
+<ul>
+<li>LSTM: Sieć Long Short-Term Memory, idealna do analizy sekwencji czasowych, takich jak trajektorie. Model miał dwie warstwy, 128 jednostek w warstwie ukrytej, dropout 0.2, funkcję aktywacji ReLU oraz funkcję straty MSE. Optymalizatorem był Adam z prędkością uczenia 0.00001. Trening trwał maksymalnie 1000 epok z mechanizmem wczesnego zatrzymania (patience=100).</li>
+<li>Transformer: Architektura oparta na mechanizmie atencji, skuteczna w modelowaniu złożonych zależności w sekwencjach. Model miał jedną warstwę, 8 głowic atencji, d_model=64, dropout 0.2, a także kodowanie pozycyjne. Parametry treningu były analogiczne do LSTM.</li>
+</ul>
+<h2 id="modele-ai-lstm-i-transformer-1">Modele AI: LSTM i Transformer</h2>
+<p>Oba modele trenowano na danych jednego okrętu (MMSI: 255806463) z uwagi na ograniczone zasoby obliczeniowe. Wyniki predykcji zostały zwizualizowane na wykresach trajektorii oraz mapach, a także ocenione poprzez analizę odległości między przewidywanymi a rzeczywistymi pozycjami.</p>
+<ul>
+<li>LSTM: Model osiągnął średnie odchylenie predykcji na poziomie około 300 metrów, co jest obiecującym wynikiem, szczególnie dla krótkich sekwencji. Wykresy trajektorii pokazały, że model dobrze odwzorowuje ruch okrętu, choć w niektórych przypadkach odchylenia były zauważalne.</li>
+<li>Transformer: Model ten lepiej radził sobie z modelowaniem złożonych zależności w dłuższych sekwencjach, jednak średnie odchylenie było nieco większe niż w przypadku LSTM, co może wynikać z mniejszej ilości danych treningowych.</li>
+</ul>
+<h2 id="wnioski">Wnioski</h2>
+<p>Proces przewidywania trajektorii okrętów wymaga starannego przygotowania danych i odpowiedniego doboru modelu. Kluczowe etapy to:</p>
+<ul>
+<li>Inżynieria cech: Obliczenie SOG, COG i składowych prędkości oraz transformacja współrzędnych na układ kartezjański.</li>
+<li>Segmentacja i skalowanie: Podział trajektorii na krótsze segmenty i normalizacja danych.</li>
+<li>Modelowanie: LSTM sprawdziło się lepiej w przypadku krótkich sekwencji i mniejszych zasobów obliczeniowych, podczas gdy Transformer wykazał potencjał w bardziej złożonych scenariuszach, choć wymaga większej ilości danych.</li>
+</ul>
+<p>Średnie odchylenie predykcji na poziomie 300 metrów (dla LSTM) jest obiecującym wynikiem, choć jego znaczenie zależy od kontekstu – w ochronie infrastruktury morskiej może to być wystarczające, ale w bardziej precyzyjnych zastosowaniach wymaga dalszej poprawy.</p>
+<h2 id="co-dalej">Co dalej?</h2>
+<p>Przyszłe badania mogą skupić się na:</p>
+<ul>
+<li>Zwiększeniu ilości danych treningowych, obejmujących więcej okrętów i dłuższe okresy.</li>
+<li>Testowaniu bardziej zaawansowanych architektur, np. hybrydowych modeli łączących LSTM i Transformery.</li>
+<li>Wdrożeniu modeli w systemach czasu rzeczywistego do wczesnego ostrzegania.</li>
+</ul>
+<p>Sztuczna inteligencja otwiera nowe możliwości w zarządzaniu ruchem morskim. Dzięki danym AIS i zaawansowanym modelom, takim jak LSTM czy Transformer, możemy nie tylko monitorować, ale i przewidywać ruch okrętów, zwiększając bezpieczeństwo i efektywność na morzach.</p>
+<h2 id="link-do-projektu">Link do projektu</h2>
+<p>Poniżej znajduje się repozytorium związane z zagadnieniem o którym była mowa.</p>
+<ul>
+<li><a href="https://github.com/BobakMariusz/ais-trajectory-prediciton">Link do repozytorium</a></li>
+<li><a href="https://github.com/BobakMariusz/ais-trajectory-prediciton/blob/main/0004-ais-prediction-r%26d-v1.pdf">Plik PDF z wykresami</a></li>
+</ul>
+
+        
+    </div>
+
+    <!-- Comment section -->
+    
+      
+        
+          <script
+  src="https://giscus.app/client.js"
+  data-repo="bobakmariusz&#x2F;bobakmariusz.github.io"
+  data-repo-id="R_kgDOOM3PUA"
+  data-category="General"
+  data-category-id="DIC_kwDOOM3PUM4CoW01"
+  data-mapping="pathname"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="bottom"
+  data-theme="preferred_color_scheme"
+  data-lang="en"
+  data-loading="lazy"
+  crossorigin="anonymous"
+  async
+></script>
+
+        
+      
+    
+
+
+    
+        <footer>
+            <hr>
+            <p>
+                
+                    Published by Mariusz Sebastian Bobak - Zawałowczyn
+                
+                
+                    
+                    in <a href="https://bobakmariusz.github.io/categories/ai/">AI</a>
+                
+                
+                    and
+                    tagged
+                    
+                        <a href="https://bobakmariusz.github.io/tags/analiza-danych/">Analiza danych</a>
+                        
+                            
+                                
+                                    ,
+                                
+                            
+                        
+                    
+                        <a href="https://bobakmariusz.github.io/tags/lstm/">LSTM</a>
+                        
+                            
+                                
+                                    ,
+                                
+                            
+                        
+                    
+                        <a href="https://bobakmariusz.github.io/tags/sieci-neuronowe/">Sieci neuronowe</a>
+                        
+                            
+                                
+                                    ,
+                                
+                            
+                        
+                    
+                        <a href="https://bobakmariusz.github.io/tags/transofrmers/">Transofrmers</a>
+                        
+                            
+                                
+                                    and
+                                
+                            
+                        
+                    
+                        <a href="https://bobakmariusz.github.io/tags/ais/">AIS</a>
+                        
+                            
+                        
+                    
+                
+            </p>
+            
+            
+        </footer>
+    
+</article>
+
+
+
+    <!-- optional scripts -->
+     
+    <script src="https://bobakmariusz.github.io/js/codeblock.js"></script>
+     
+    <script src="https://bobakmariusz.github.io/js/toggle-theme.js"></script>
+     
+<!-- MathJax script for rendering LaTeX math equations -->
+<script src="https://bobakmariusz.github.io/js/mathjax-config.js"></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+  async
+></script>
+
+  
+  </body>
+</html>

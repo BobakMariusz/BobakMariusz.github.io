@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="pl">
-    <title>Mariusz Bobak - Blog - LSTM</title>
+    <title>Mariusz Bobak - Blog - DL</title>
     <subtitle>Blog na temat technologii - w sczególności o architekturze, sieciach neuronowych oraz wszechobecnej sztucznej inteligencji</subtitle>
-    <link rel="self" type="application/atom+xml" href="https://bobakmariusz.github.io/tags/lstm/atom.xml"/>
+    <link rel="self" type="application/atom+xml" href="https://bobakmariusz.github.io/categories/dl/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://bobakmariusz.github.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
     <updated>2025-09-30T00:00:00+00:00</updated>
-    <id>https://bobakmariusz.github.io/tags/lstm/atom.xml</id>
+    <id>https://bobakmariusz.github.io/categories/dl/atom.xml</id>
     <entry xml:lang="pl">
         <title>Przewidywanie Trajektorii Okrętów z Wykorzystaniem Sztucznej Inteligencji: Analiza Danych AIS</title>
         <published>2025-09-30T00:00:00+00:00</published>
@@ -61,109 +61,6 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;BobakMariusz&#x2F;ais-trajectory-prediciton&quot;&gt;Link do repozytorium&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;BobakMariusz&#x2F;ais-trajectory-prediciton&#x2F;blob&#x2F;main&#x2F;0004-ais-prediction-r%26d-v1.pdf&quot;&gt;Plik PDF z wykresami&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-</content>
-        
-    </entry>
-    <entry xml:lang="pl">
-        <title>Automatyczna analiza oraz korelacja zdarzeń</title>
-        <published>2025-03-22T00:00:00+00:00</published>
-        <updated>2025-03-22T00:00:00+00:00</updated>
-        
-        <author>
-          <name>
-            
-              Unknown
-            
-          </name>
-        </author>
-        
-        <link rel="alternate" type="text/html" href="https://bobakmariusz.github.io/post-1/"/>
-        <id>https://bobakmariusz.github.io/post-1/</id>
-        
-        <content type="html" xml:base="https://bobakmariusz.github.io/post-1/">&lt;p&gt;Czy zastanawiałeś się kiedyś, jak przewidzieć blackout w sieci energetycznej albo skok kursu Bitcoina po jednym tweecie Elona Muska? Odpowiedź leży w automatycznej analizie zdarzeń i ich korelacji. W tym poście pokażę Ci, jak technologia może znaleźć związki tam, gdzie na pierwszy rzut oka ich nie widać, i jak wykorzystać to do przewidywania przyszłości.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;wprowadzenie-do-automatycznej-analizy-zdarzen&quot;&gt;Wprowadzenie do automatycznej analizy zdarzeń&lt;&#x2F;h2&gt;
-&lt;p&gt;Wyobraź sobie, że masz tysiące danych: czujniki w elektrowni, wpisy na X-ie, nagłówki prasowe. Ręczne ich analizowanie to jak szukanie igły w stogu siana – tylko że stóg rośnie z każdą minutą. Automatyczna analiza zdarzeń to sposób na to, by maszyny zrobiły to za nas: szybko, dokładnie i bez kawy na podtrzymanie. Dzięki niej możemy nie tylko zrozumieć, co się dzieje, ale też znaleźć powiązania między tymi danymi – czyli przejść do korelacji.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;czym-jest-korelacja-zdarzen-i-dlaczego-ma-znaczenie&quot;&gt;Czym jest korelacja zdarzeń i dlaczego ma znaczenie ?&lt;&#x2F;h2&gt;
-&lt;p&gt;Korelacja to po prostu miara zależności między dwoma rzeczami. Jeśli temperatura w elektrowni rośnie, a zaraz potem wysiada system chłodzenia – to korelacja. Jeśli Elon tweetuje &quot;Dogecoin!&quot;, a kurs skacze o 20% – to też korelacja. Brzmi prosto, ale diabeł tkwi w szczegółach. Korelacja może być liniowa (prosta jak linijka) albo nieliniowa (krzywa jak rollercoaster). Dlaczego to ważne? Bo zrozumienie tych związków to pierwszy krok do przewidywania, co będzie dalej.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;zrodla-danych-od-czujnikow-po-media-spolecznosciowe&quot;&gt;Źródła danych: Od czujników po media społecznościowe&lt;&#x2F;h2&gt;
-&lt;p&gt;Dane to paliwo analizy, a źródeł mamy pod dostatkiem:&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Czujniki: Temperatura, ciśnienie, ruch sieciowy – wszystko, co mierzą maszyny.&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;Prasa: &quot;Awaria w sieci energetycznej !&quot; – nagłówki pełne emocji i faktów.&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;X: &quot;BTC to the moon!&quot; – chaos, ale i złoto dla analityków.&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;p&gt;Problem? Każde źródło mówi innym językiem. Czujniki dają liczby, X – emocje, a prasa – historie.
-Połączenie ich to jak dogadanie się psa z kotem – trudne, ale możliwe.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;narzedzia-i-technologie-do-analizy-zdarzen&quot;&gt;Narzędzia i technologie do analizy zdarzeń&lt;&#x2F;h2&gt;
-&lt;p&gt;Żeby ogarnąć ten bałagan, potrzebujemy odpowiednich narzędzi:&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;NiFi: Zbiera dane z różnych źródeł w czasie rzeczywistym – jak odkurzacz dla big data.&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;OpenSearch: Indeksuje wszystko, od tweetów po logi.&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;Wytrenowane specyficzne modele: Aby nie wymyślać koła na nowo.&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;Sieci neuronowe: Gdy zwykła matematyka nie wystarczy, one znajdują nieliniowe związki.&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;metody-wiazania-zdarzen-z-roznych-zrodel&quot;&gt;Metody wiązania zdarzeń z różnych źródeł&lt;&#x2F;h2&gt;
-&lt;p&gt;Jak sprawić, by dane z czujników i X-a zaczęły ze sobą rozmawiać? Oto kilka trików:&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Wyrównanie czasowe: Jeśli tweet o 10:00 mówi &quot;Awaria!&quot;, a czujnik o 10:01 pokazuje spadek napięcia – łączymy je po czasie.&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;Analiza sentymentu: &quot;Super system!&quot; (pozytywne) vs. &quot;Katastrofa!&quot; (negatywne) – sentyment z tekstu może wskazywać kierunek zmian.&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;Korelacja krzyżowa: Sprawdza, czy jedno zdarzenie (np. tweet) poprzedza inne (np. skok kursu) z opóźnieniem.&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;p&gt;Przykład? Tweet &quot;BTC pump!&quot; o 9:00 i wzrost kursu o 9:05 – korelacja krzyżowa pokaże, że reakcja trwa 5 minut.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;od-korelacji-do-predykcji-jak-przewidywac-przyszlosc&quot;&gt;Od korelacji do predykcji: Jak przewidywać przyszłość?&lt;&#x2F;h2&gt;
-&lt;p&gt;Znalazłeś korelację – co dalej? Czas na predykcję! Jeśli wiemy, że pozytywne X-y podnoszą kurs kryptowaluty, możemy użyć sieci neuronowych (np. LSTM), by przewidzieć, co będzie jutro.
-Albo jeśli wysoka temperatura w elektrowni koreluje z awariami, system może ostrzec: &quot;Uwaga, za godzinę blackout!&quot;. To jak kryształowa kula, tylko oparta na danych, a nie magii.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;przyklady-zastosowan-w-praktyce&quot;&gt;Przykłady zastosowań w praktyce&lt;&#x2F;h2&gt;
-&lt;p&gt;Gdzie to działa?&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Kryptowaluty: Sentyment z X + dane rynkowe = prognoza, czy Bitcoin poleci w górę czy w dół.&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;Bezpieczeństwo IT: Wzrost błędów w logach + newsy o cyberatakach = wczesne ostrzeżenie.&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;wyzwania-i-pulapki-w-analizie-zdarzen&quot;&gt;Wyzwania i pułapki w analizie zdarzeń&lt;&#x2F;h2&gt;
-&lt;p&gt;Nie wszystko jest różowe:&lt;&#x2F;p&gt;
-&lt;p&gt;Szum: X pełen jest żartów i plotek – jak odróżnić sygnał od hałasu?&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Korelacja ≠ przyczynowość: Wzrost sprzedaży lodów i awarie klimatyzacji latem? Korelacja jest, ale jedno nie powoduje drugiego.&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;Brak danych: Jeśli czujnik się zepsuł, a X milczy – nici z analizy.&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;p&gt;Klucz to ostrożność i weryfikacja – dane kłamią częściej, niż myślisz.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;przyszlosc-automatycznej-analizy-zdarzen&quot;&gt;Przyszłość automatycznej analizy zdarzeń&lt;&#x2F;h2&gt;
-&lt;p&gt;Co przyniesie jutro? Sztuczna inteligencja, jak duże modele językowe (LLM), już teraz potrafi analizować sentyment i znajdować wzorce w chaosie.
-Za kilka lat możemy mieć systemy, które przewidzą awarię sieci, zanim inżynier włoży buty, albo portfel kryptowalutowy, który sam kupuje BTC, gdy X szaleje.
-Brzmi futurystycznie? To tylko kwestia czasu.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;jak-powiedzial-tak-zrobil&quot;&gt;Jak powiedział tak zrobił&lt;&#x2F;h2&gt;
-&lt;p&gt;Poniżej znajduje się repozytorium związane z zagadnieniem o którym była mowa.&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;BobakMariusz&#x2F;events-correlations&#x2F;tree&#x2F;main&quot;&gt;Link do repozytorium&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 </content>
         
