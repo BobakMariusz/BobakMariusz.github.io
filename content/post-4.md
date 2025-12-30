@@ -1,5 +1,5 @@
 +++
-title = "Nienadzorowane wykrywanie anomalii w ruchu morskim z użyciem danych AIS"
+title = "Nienadzorowane wykrywanie anomalii w ruchu morskim z wykorzystaniem Transformera"
 date = 2025-12-30
 
 [taxonomies]
@@ -14,19 +14,19 @@ Wyobraź sobie, że tysiące statków na całym świecie co chwilę nadają swoj
 
 Takie dziwne sytuacje mogą oznaczać zwykły błąd GPS, awarię nadajnika albo… celowe oszustwo (tzw. **spoofing AIS**). W tym wpisie pokażę w prosty sposób, jak za pomocą sztucznej inteligencji (konkretnie modelu Transformer) można automatycznie wyłapywać takie podejrzane zachowania.
 
-### Skąd dane?
+## Skąd dane?
 
-Użyliśmy prawdziwych, publicznie dostępnych danych AIS z jednego dnia – **1 stycznia 2025 roku** (źródło: duńska agencja morska). Dla uproszczenia wzięliśmy trajektorię jednego statku – ponad 27 tysięcy punktów z jego pozycją, prędkością i kursem w ciągu całej doby.
+Użyto prawdziwych, publicznie dostępnych danych AIS z jednego dnia – **1 stycznia 2025 roku** (źródło: duńska agencja morska). Dla uproszczenia wzięto trajektorię jednego statku – ponad 27 tysięcy punktów z jego pozycją, prędkością i kursem w ciągu całej doby.
 
-### Co zrobiliśmy z danymi?
+## Co zrobiono z danymi?
 
-1. **Wyczyściliśmy je** – usunęliśmy oczywiste błędy (np. pozycje poza mapą świata czy prędkości ujemne). 
-2. **Dodaliśmy przydatne informacje** – obliczyliśmy rzeczywistą odległość między kolejnymi punktami, prawdziwą prędkość i kierunek ruchu.
-3. **Ujednoliciliśmy czas** – statek nie raportuje danych co sekundę, więc „wypełniliśmy” luki, żeby ruch był płynny (jak film zamiast serii zdjęć).
+1. **Wyczyszczono je** – usunięto oczywiste błędy (np. pozycje poza mapą świata czy prędkości ujemne). 
+2. **Dodano przydatne informacje** – obliczono rzeczywistą odległość między kolejnymi punktami, prawdziwą prędkość i kierunek ruchu.
+3. **Ujednolicono czas** – statek nie raportuje danych co sekundę, więc "wypełniono" luki, żeby ruch był płynny (jak film zamiast serii zdjęć).
 
 ### Jak działa detektor?
 
-Zbudowaliśmy model typu **autoencoder** oparty na Transformerze (tym samym mechanizmie, co ChatGPT).
+Zbudowano model typu **autoencoder** oparty na Transformerze (tym samym mechanizmie, co ChatGPT).
 
 Prosto mówiąc:
 - Pokazujemy modelowi tysiące przykładów „normalnego” ruchu statku.
@@ -37,7 +37,7 @@ Nie musimy ręcznie pisać reguł typu „jeśli prędkość > 30 węzłów, to 
 
 ### Co potrafi wykryć?
 
-Przetestowaliśmy go na sztucznie przygotowanej trajektorii z kilkoma celowo wprowadzonymi problemami:
+Przetestowano go na sztucznie przygotowanej trajektorii z kilkoma celowo wprowadzonymi problemami:
 
 - Statek nagle „teleportuje się” o kilka kilometrów → **wykryte!**
 - Przyspiesza do zupełnie nierealnej prędkości → **wykryte!**
