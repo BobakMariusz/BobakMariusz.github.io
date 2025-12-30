@@ -8,7 +8,7 @@
     <updated>2025-12-30T00:00:00+00:00</updated>
     <id>https://bobakmariusz.github.io/categories/dl/atom.xml</id>
     <entry xml:lang="pl">
-        <title>Nienadzorowane wykrywanie anomalii w ruchu morskim z użyciem danych AIS</title>
+        <title>Nienadzorowane wykrywanie anomalii w ruchu morskim z wykorzystaniem Transformera</title>
         <published>2025-12-30T00:00:00+00:00</published>
         <updated>2025-12-30T00:00:00+00:00</updated>
         
@@ -26,16 +26,16 @@
         <content type="html" xml:base="https://bobakmariusz.github.io/post-4/">&lt;h1 id=&quot;jak-wykrywac-dziwne-zachowania-statkow-na-morzu-dzieki-sztucznej-inteligencji&quot;&gt;Jak wykrywać dziwne zachowania statków na morzu dzięki sztucznej inteligencji?&lt;&#x2F;h1&gt;
 &lt;p&gt;Wyobraź sobie, że tysiące statków na całym świecie co chwilę nadają swoją pozycję, prędkość i kurs – to system &lt;strong&gt;AIS&lt;&#x2F;strong&gt; (Automatic Identification System). Dzięki temu wiemy, gdzie są kontenerowce, promy czy jachty. Ale czasem coś jest nie tak: statek nagle „przeskakuje” o kilka kilometrów, jedzie z prędkością 50 węzłów (jak szybka motorówka, a nie wielki tankowiec) albo po prostu stoi w miejscu przez godziny.&lt;&#x2F;p&gt;
 &lt;p&gt;Takie dziwne sytuacje mogą oznaczać zwykły błąd GPS, awarię nadajnika albo… celowe oszustwo (tzw. &lt;strong&gt;spoofing AIS&lt;&#x2F;strong&gt;). W tym wpisie pokażę w prosty sposób, jak za pomocą sztucznej inteligencji (konkretnie modelu Transformer) można automatycznie wyłapywać takie podejrzane zachowania.&lt;&#x2F;p&gt;
-&lt;h3 id=&quot;skad-dane&quot;&gt;Skąd dane?&lt;&#x2F;h3&gt;
-&lt;p&gt;Użyliśmy prawdziwych, publicznie dostępnych danych AIS z jednego dnia – &lt;strong&gt;1 stycznia 2025 roku&lt;&#x2F;strong&gt; (źródło: duńska agencja morska). Dla uproszczenia wzięliśmy trajektorię jednego statku – ponad 27 tysięcy punktów z jego pozycją, prędkością i kursem w ciągu całej doby.&lt;&#x2F;p&gt;
-&lt;h3 id=&quot;co-zrobilismy-z-danymi&quot;&gt;Co zrobiliśmy z danymi?&lt;&#x2F;h3&gt;
+&lt;h2 id=&quot;skad-dane&quot;&gt;Skąd dane?&lt;&#x2F;h2&gt;
+&lt;p&gt;Użyto prawdziwych, publicznie dostępnych danych AIS z jednego dnia – &lt;strong&gt;1 stycznia 2025 roku&lt;&#x2F;strong&gt; (źródło: duńska agencja morska). Dla uproszczenia wzięto trajektorię jednego statku – ponad 27 tysięcy punktów z jego pozycją, prędkością i kursem w ciągu całej doby.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;co-zrobiono-z-danymi&quot;&gt;Co zrobiono z danymi?&lt;&#x2F;h2&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Wyczyściliśmy je&lt;&#x2F;strong&gt; – usunęliśmy oczywiste błędy (np. pozycje poza mapą świata czy prędkości ujemne).&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;strong&gt;Dodaliśmy przydatne informacje&lt;&#x2F;strong&gt; – obliczyliśmy rzeczywistą odległość między kolejnymi punktami, prawdziwą prędkość i kierunek ruchu.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;strong&gt;Ujednoliciliśmy czas&lt;&#x2F;strong&gt; – statek nie raportuje danych co sekundę, więc „wypełniliśmy” luki, żeby ruch był płynny (jak film zamiast serii zdjęć).&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Wyczyszczono je&lt;&#x2F;strong&gt; – usunięto oczywiste błędy (np. pozycje poza mapą świata czy prędkości ujemne).&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Dodano przydatne informacje&lt;&#x2F;strong&gt; – obliczono rzeczywistą odległość między kolejnymi punktami, prawdziwą prędkość i kierunek ruchu.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Ujednolicono czas&lt;&#x2F;strong&gt; – statek nie raportuje danych co sekundę, więc &quot;wypełniono&quot; luki, żeby ruch był płynny (jak film zamiast serii zdjęć).&lt;&#x2F;li&gt;
 &lt;&#x2F;ol&gt;
 &lt;h3 id=&quot;jak-dziala-detektor&quot;&gt;Jak działa detektor?&lt;&#x2F;h3&gt;
-&lt;p&gt;Zbudowaliśmy model typu &lt;strong&gt;autoencoder&lt;&#x2F;strong&gt; oparty na Transformerze (tym samym mechanizmie, co ChatGPT).&lt;&#x2F;p&gt;
+&lt;p&gt;Zbudowano model typu &lt;strong&gt;autoencoder&lt;&#x2F;strong&gt; oparty na Transformerze (tym samym mechanizmie, co ChatGPT).&lt;&#x2F;p&gt;
 &lt;p&gt;Prosto mówiąc:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;Pokazujemy modelowi tysiące przykładów „normalnego” ruchu statku.&lt;&#x2F;li&gt;
@@ -44,7 +44,7 @@
 &lt;&#x2F;ul&gt;
 &lt;p&gt;Nie musimy ręcznie pisać reguł typu „jeśli prędkość &amp;gt; 30 węzłów, to podejrzane”. Model sam zauważa, że coś nie pasuje do wzorca.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;co-potrafi-wykryc&quot;&gt;Co potrafi wykryć?&lt;&#x2F;h3&gt;
-&lt;p&gt;Przetestowaliśmy go na sztucznie przygotowanej trajektorii z kilkoma celowo wprowadzonymi problemami:&lt;&#x2F;p&gt;
+&lt;p&gt;Przetestowano go na sztucznie przygotowanej trajektorii z kilkoma celowo wprowadzonymi problemami:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;Statek nagle „teleportuje się” o kilka kilometrów → &lt;strong&gt;wykryte!&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;Przyspiesza do zupełnie nierealnej prędkości → &lt;strong&gt;wykryte!&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;

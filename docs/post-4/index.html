@@ -18,7 +18,7 @@
 
     <title>
     
-    Nienadzorowane wykrywanie anomalii w ruchu morskim z użyciem danych AIS
+    Nienadzorowane wykrywanie anomalii w ruchu morskim z wykorzystaniem Transformera
     
 </title>
 
@@ -31,7 +31,7 @@
       property="og:type"
       content="article"
     />
-    <meta property="og:title" content="Nienadzorowane wykrywanie anomalii w ruchu morskim z użyciem danych AIS" />
+    <meta property="og:title" content="Nienadzorowane wykrywanie anomalii w ruchu morskim z wykorzystaniem Transformera" />
     <meta
       property="og:image"
       content="https:&#x2F;&#x2F;bobakmariusz.github.io/icons/favicon/web-app-manifest-512x512.png"
@@ -43,7 +43,7 @@
       property="twitter:url"
       content="https:&#x2F;&#x2F;bobakmariusz.github.io&#x2F;post-4&#x2F;"
     />
-    <meta name="twitter:title" content="Nienadzorowane wykrywanie anomalii w ruchu morskim z użyciem danych AIS" />
+    <meta name="twitter:title" content="Nienadzorowane wykrywanie anomalii w ruchu morskim z wykorzystaniem Transformera" />
     <meta
       name="twitter:image"
       content="https:&#x2F;&#x2F;bobakmariusz.github.io/icons/favicon/web-app-manifest-512x512.png"
@@ -71,7 +71,7 @@
       sizes="180x180"
       href="https:&#x2F;&#x2F;bobakmariusz.github.io/icons/favicon/apple-touch-icon.png"
     />
-    <meta name="apple-mobile-web-app-title" content="Nienadzorowane wykrywanie anomalii w ruchu morskim z użyciem danych AIS" />
+    <meta name="apple-mobile-web-app-title" content="Nienadzorowane wykrywanie anomalii w ruchu morskim z wykorzystaniem Transformera" />
     <link
       rel="manifest"
       href="https:&#x2F;&#x2F;bobakmariusz.github.io/icons/favicon/site.webmanifest"
@@ -189,7 +189,7 @@
 
 <article itemscope itemtype="http://schema.org/BlogPosting">
     <header>
-        <h1 itemprop="headline">Nienadzorowane wykrywanie anomalii w ruchu morskim z użyciem danych AIS</h1>
+        <h1 itemprop="headline">Nienadzorowane wykrywanie anomalii w ruchu morskim z wykorzystaniem Transformera</h1>
         <span class="muted">
     <svg class="icon i-clock" viewBox="0 0 32 32"
          width="16" height="16" fill="none" stroke="currentcolor"
@@ -214,16 +214,16 @@
             <h1 id="jak-wykrywac-dziwne-zachowania-statkow-na-morzu-dzieki-sztucznej-inteligencji">Jak wykrywać dziwne zachowania statków na morzu dzięki sztucznej inteligencji?</h1>
 <p>Wyobraź sobie, że tysiące statków na całym świecie co chwilę nadają swoją pozycję, prędkość i kurs – to system <strong>AIS</strong> (Automatic Identification System). Dzięki temu wiemy, gdzie są kontenerowce, promy czy jachty. Ale czasem coś jest nie tak: statek nagle „przeskakuje” o kilka kilometrów, jedzie z prędkością 50 węzłów (jak szybka motorówka, a nie wielki tankowiec) albo po prostu stoi w miejscu przez godziny.</p>
 <p>Takie dziwne sytuacje mogą oznaczać zwykły błąd GPS, awarię nadajnika albo… celowe oszustwo (tzw. <strong>spoofing AIS</strong>). W tym wpisie pokażę w prosty sposób, jak za pomocą sztucznej inteligencji (konkretnie modelu Transformer) można automatycznie wyłapywać takie podejrzane zachowania.</p>
-<h3 id="skad-dane">Skąd dane?</h3>
-<p>Użyliśmy prawdziwych, publicznie dostępnych danych AIS z jednego dnia – <strong>1 stycznia 2025 roku</strong> (źródło: duńska agencja morska). Dla uproszczenia wzięliśmy trajektorię jednego statku – ponad 27 tysięcy punktów z jego pozycją, prędkością i kursem w ciągu całej doby.</p>
-<h3 id="co-zrobilismy-z-danymi">Co zrobiliśmy z danymi?</h3>
+<h2 id="skad-dane">Skąd dane?</h2>
+<p>Użyto prawdziwych, publicznie dostępnych danych AIS z jednego dnia – <strong>1 stycznia 2025 roku</strong> (źródło: duńska agencja morska). Dla uproszczenia wzięto trajektorię jednego statku – ponad 27 tysięcy punktów z jego pozycją, prędkością i kursem w ciągu całej doby.</p>
+<h2 id="co-zrobiono-z-danymi">Co zrobiono z danymi?</h2>
 <ol>
-<li><strong>Wyczyściliśmy je</strong> – usunęliśmy oczywiste błędy (np. pozycje poza mapą świata czy prędkości ujemne).</li>
-<li><strong>Dodaliśmy przydatne informacje</strong> – obliczyliśmy rzeczywistą odległość między kolejnymi punktami, prawdziwą prędkość i kierunek ruchu.</li>
-<li><strong>Ujednoliciliśmy czas</strong> – statek nie raportuje danych co sekundę, więc „wypełniliśmy” luki, żeby ruch był płynny (jak film zamiast serii zdjęć).</li>
+<li><strong>Wyczyszczono je</strong> – usunięto oczywiste błędy (np. pozycje poza mapą świata czy prędkości ujemne).</li>
+<li><strong>Dodano przydatne informacje</strong> – obliczono rzeczywistą odległość między kolejnymi punktami, prawdziwą prędkość i kierunek ruchu.</li>
+<li><strong>Ujednolicono czas</strong> – statek nie raportuje danych co sekundę, więc "wypełniono" luki, żeby ruch był płynny (jak film zamiast serii zdjęć).</li>
 </ol>
 <h3 id="jak-dziala-detektor">Jak działa detektor?</h3>
-<p>Zbudowaliśmy model typu <strong>autoencoder</strong> oparty na Transformerze (tym samym mechanizmie, co ChatGPT).</p>
+<p>Zbudowano model typu <strong>autoencoder</strong> oparty na Transformerze (tym samym mechanizmie, co ChatGPT).</p>
 <p>Prosto mówiąc:</p>
 <ul>
 <li>Pokazujemy modelowi tysiące przykładów „normalnego” ruchu statku.</li>
@@ -232,7 +232,7 @@
 </ul>
 <p>Nie musimy ręcznie pisać reguł typu „jeśli prędkość &gt; 30 węzłów, to podejrzane”. Model sam zauważa, że coś nie pasuje do wzorca.</p>
 <h3 id="co-potrafi-wykryc">Co potrafi wykryć?</h3>
-<p>Przetestowaliśmy go na sztucznie przygotowanej trajektorii z kilkoma celowo wprowadzonymi problemami:</p>
+<p>Przetestowano go na sztucznie przygotowanej trajektorii z kilkoma celowo wprowadzonymi problemami:</p>
 <ul>
 <li>Statek nagle „teleportuje się” o kilka kilometrów → <strong>wykryte!</strong></li>
 <li>Przyspiesza do zupełnie nierealnej prędkości → <strong>wykryte!</strong></li>
