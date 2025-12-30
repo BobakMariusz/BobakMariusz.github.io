@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="pl-PL">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <!-- Enable responsiveness on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+    <meta name="description" content="Blog na temat technologii - w sczególności o architekturze, sieciach neuronowych oraz wszechobecnej sztucznej inteligencji" />
+    <meta property="og:description" content="Blog na temat technologii - w sczególności o architekturze, sieciach neuronowych oraz wszechobecnej sztucznej inteligencji" />
+    <meta property="twitter:description" content="Blog na temat technologii - w sczególności o architekturze, sieciach neuronowych oraz wszechobecnej sztucznej inteligencji" />
+    
+
+    <!-- Title -->
+      
+
+    <title>
+    
+    Nienadzorowane wykrywanie anomalii w ruchu morskim z użyciem danych AIS
+    
+</title>
+
+    <!-- Additional Facebook Meta Tags -->
+    <meta
+      property="og:url"
+      content="https:&#x2F;&#x2F;bobakmariusz.github.io&#x2F;post-4&#x2F;"
+    />
+    <meta
+      property="og:type"
+      content="article"
+    />
+    <meta property="og:title" content="Nienadzorowane wykrywanie anomalii w ruchu morskim z użyciem danych AIS" />
+    <meta
+      property="og:image"
+      content="https:&#x2F;&#x2F;bobakmariusz.github.io/icons/favicon/web-app-manifest-512x512.png"
+    />
+
+    <!-- Additional Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https:&#x2F;&#x2F;bobakmariusz.github.io&#x2F;post-4&#x2F;"
+    />
+    <meta name="twitter:title" content="Nienadzorowane wykrywanie anomalii w ruchu morskim z użyciem danych AIS" />
+    <meta
+      name="twitter:image"
+      content="https:&#x2F;&#x2F;bobakmariusz.github.io/icons/favicon/web-app-manifest-512x512.png"
+    />
+
+    <!-- Favicons -->
+    
+    <link
+      rel="icon"
+      type="image/png"
+      href="https:&#x2F;&#x2F;bobakmariusz.github.io/icons/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https:&#x2F;&#x2F;bobakmariusz.github.io/icons/favicon/favicon.svg"
+    />
+    <link
+      rel="shortcut icon"
+      href="https:&#x2F;&#x2F;bobakmariusz.github.io/icons/favicon/favicon.ico"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https:&#x2F;&#x2F;bobakmariusz.github.io/icons/favicon/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="Nienadzorowane wykrywanie anomalii w ruchu morskim z użyciem danych AIS" />
+    <link
+      rel="manifest"
+      href="https:&#x2F;&#x2F;bobakmariusz.github.io/icons/favicon/site.webmanifest"
+    />
+    
+
+    <!-- RSS Feed -->
+    
+    <link
+      rel="alternate"
+      type="application/atom+xml"
+      title="RSS"
+      href="https://bobakmariusz.github.io/atom.xml"
+    />
+    
+
+    <!-- Load Styles -->
+    <link
+      rel="stylesheet"
+      href="https://bobakmariusz.github.io/site.css"
+    />
+
+    <!-- Pass Theme Preference as Data Attribute -->
+    <script>
+      document.documentElement.dataset.theme =
+        "toggle";
+    </script>
+  </head>
+
+  <body class="hack dark main container">
+    
+    
+         
+    <header class="nav-header">
+      <nav
+        itemscope
+        itemtype="http://schema.org/SiteNavigationElement"
+        class="navbar"
+      >
+        <div class="nav-links">
+          
+          <a
+            itemprop="url"
+            class=""
+            href="https://bobakmariusz.github.io"
+          >
+            <span itemprop="name">Strona główna</span>
+          </a>
+          
+          <a
+            itemprop="url"
+            class=""
+            href="https://bobakmariusz.github.io/categories"
+          >
+            <span itemprop="name">Kategorie</span>
+          </a>
+          
+          <a
+            itemprop="url"
+            class=""
+            href="https://bobakmariusz.github.io/tags"
+          >
+            <span itemprop="name">Tagi</span>
+          </a>
+          
+        </div>
+  </ul>
+      </nav>
+      <div class="user-actions-container">
+         
+        <a id="dark-mode-toggle" href="#">
+          <img
+            src="https://bobakmariusz.github.io/icons/sun.svg"
+            id="sun-icon"
+            style="filter: invert(1)"
+            alt="Light mode"
+          />
+          <img
+            src="https://bobakmariusz.github.io/icons/moon.svg"
+            id="moon-icon"
+            alt="Dark mode"
+          />
+        </a>
+         
+        <a
+          href="https://bobakmariusz.github.io/atom.xml"
+          class="feed-icon"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="https://bobakmariusz.github.io/icons/rss.svg"
+            id="rss-icon"
+            alt="RSS feed"
+            class="social-icon"
+          />
+        </a>
+         
+        <a
+          href="https:&#x2F;&#x2F;github.com&#x2F;BobakMariusz"
+          class="feed-icon"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="https://bobakmariusz.github.io/icons/github.svg"
+            id="github-icon"
+            alt="GitHub"
+            class="social-icon"
+          />
+        </a>
+        
+      </div>
+    </header>
+     
+    
+
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        <h1 itemprop="headline">Nienadzorowane wykrywanie anomalii w ruchu morskim z użyciem danych AIS</h1>
+        <span class="muted">
+    <svg class="icon i-clock" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <circle cx="16" cy="16" r="14"/>
+        <path d="M16 8 L16 16 20 20"/>
+    </svg>
+    <span>3 minute read</span>
+    <svg class="icon i-edit" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <path d="M30 7 L25 2 5 22 3 29 10 27 Z M21 6 L26 11 Z M5 22 L10 27 Z"/>
+    </svg>
+
+    Published: 2025-09-30
+</span>
+    </header>
+
+    <div itemprop="articleBody">
+        
+            <!-- If no summary separate from content, just render content -->
+            <h1 id="jak-wykrywac-dziwne-zachowania-statkow-na-morzu-dzieki-sztucznej-inteligencji">Jak wykrywać dziwne zachowania statków na morzu dzięki sztucznej inteligencji?</h1>
+<p>Wyobraź sobie, że tysiące statków na całym świecie co chwilę nadają swoją pozycję, prędkość i kurs – to system <strong>AIS</strong> (Automatic Identification System). Dzięki temu wiemy, gdzie są kontenerowce, promy czy jachty. Ale czasem coś jest nie tak: statek nagle „przeskakuje” o kilka kilometrów, jedzie z prędkością 50 węzłów (jak szybka motorówka, a nie wielki tankowiec) albo po prostu stoi w miejscu przez godziny.</p>
+<p>Takie dziwne sytuacje mogą oznaczać zwykły błąd GPS, awarię nadajnika albo… celowe oszustwo (tzw. <strong>spoofing AIS</strong>). W tym wpisie pokażę w prosty sposób, jak za pomocą sztucznej inteligencji (konkretnie modelu Transformer) można automatycznie wyłapywać takie podejrzane zachowania.</p>
+<h3 id="skad-dane">Skąd dane?</h3>
+<p>Użyliśmy prawdziwych, publicznie dostępnych danych AIS z jednego dnia – <strong>1 stycznia 2025 roku</strong> (źródło: duńska agencja morska). Dla uproszczenia wzięliśmy trajektorię jednego statku – ponad 27 tysięcy punktów z jego pozycją, prędkością i kursem w ciągu całej doby.</p>
+<h3 id="co-zrobilismy-z-danymi">Co zrobiliśmy z danymi?</h3>
+<ol>
+<li><strong>Wyczyściliśmy je</strong> – usunęliśmy oczywiste błędy (np. pozycje poza mapą świata czy prędkości ujemne).</li>
+<li><strong>Dodaliśmy przydatne informacje</strong> – obliczyliśmy rzeczywistą odległość między kolejnymi punktami, prawdziwą prędkość i kierunek ruchu.</li>
+<li><strong>Ujednoliciliśmy czas</strong> – statek nie raportuje danych co sekundę, więc „wypełniliśmy” luki, żeby ruch był płynny (jak film zamiast serii zdjęć).</li>
+</ol>
+<h3 id="jak-dziala-detektor">Jak działa detektor?</h3>
+<p>Zbudowaliśmy model typu <strong>autoencoder</strong> oparty na Transformerze (tym samym mechanizmie, co ChatGPT).</p>
+<p>Prosto mówiąc:</p>
+<ul>
+<li>Pokazujemy modelowi tysiące przykładów „normalnego” ruchu statku.</li>
+<li>Model uczy się, jak wygląda typowa trajektoria.</li>
+<li>Kiedy dostanie coś dziwnego, nie potrafi tego dobrze odtworzyć → pojawia się duży błąd → alarm: „coś jest nie tak!”.</li>
+</ul>
+<p>Nie musimy ręcznie pisać reguł typu „jeśli prędkość &gt; 30 węzłów, to podejrzane”. Model sam zauważa, że coś nie pasuje do wzorca.</p>
+<h3 id="co-potrafi-wykryc">Co potrafi wykryć?</h3>
+<p>Przetestowaliśmy go na sztucznie przygotowanej trajektorii z kilkoma celowo wprowadzonymi problemami:</p>
+<ul>
+<li>Statek nagle „teleportuje się” o kilka kilometrów → <strong>wykryte!</strong></li>
+<li>Przyspiesza do zupełnie nierealnej prędkości → <strong>wykryte!</strong></li>
+<li>Zatrzymuje się na długo i dryfuje → <strong>wykryte!</strong></li>
+<li>Zaczyna chaotycznie zmieniać kierunek (jakby „szwendał się” po morzu) → <strong>wykryte!</strong></li>
+</ul>
+<p>Na wykresie błędu rekonstrukcji widać wyraźne szczyty dokładnie w miejscach, gdzie coś było nie tak.</p>
+<h3 id="dlaczego-to-fajne">Dlaczego to fajne?</h3>
+<ul>
+<li>Działa automatycznie na ogromnych ilościach danych.</li>
+<li>Nie trzeba znać wszystkich możliwych rodzajów oszustw – model sam się ich uczy.</li>
+<li>Można go uruchomić w czasie rzeczywistym, żeby od razu alarmować o podejrzanym statku.</li>
+</ul>
+<h3 id="podsumowanie">Podsumowanie</h3>
+<p>Sztuczna inteligencja coraz lepiej radzi sobie z wykrywaniem anomalii w danych morskich. Dzięki prostemu modelowi typu autoencoder możemy w kilka sekund sprawdzić, czy ruch statku wygląda normalnie, czy coś budzi wątpliwości.</p>
+<p>Jeśli zajmujesz się bezpieczeństwem morskim, logistyką albo po prostu lubisz dane i morze – takie narzędzia mogą być bardzo przydatne. A najlepsze jest to, że cały proces da się powtórzyć na własnych danych w kilka godzin.</p>
+<h2 id="link-do-projektu">Link do projektu</h2>
+<p>Poniżej znajduje się repozytorium związane z zagadnieniem o którym była mowa.</p>
+<ul>
+<li><a href="https://github.com/BobakMariusz/ais-anomaly-detection">Link do repozytorium</a></li>
+<li><a href="https://github.com/BobakMariusz/ais-anomaly-detection/blob/main/ais-prediction-lstm.ipynb">Plik Jupiter Notebook z wykresami</a></li>
+</ul>
+
+        
+    </div>
+
+    <!-- Comment section -->
+    
+      
+        
+          <script
+  src="https://giscus.app/client.js"
+  data-repo="bobakmariusz&#x2F;bobakmariusz.github.io"
+  data-repo-id="R_kgDOOM3PUA"
+  data-category="General"
+  data-category-id="DIC_kwDOOM3PUM4CoW01"
+  data-mapping="pathname"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="bottom"
+  data-theme="preferred_color_scheme"
+  data-lang="en"
+  data-loading="lazy"
+  crossorigin="anonymous"
+  async
+></script>
+
+        
+      
+    
+
+
+    
+        <footer>
+            <hr>
+            <p>
+                
+                    Published by Mariusz Sebastian Bobak - Zawałowczyn
+                
+                
+                    
+                    in <a href="https://bobakmariusz.github.io/categories/ai/">AI</a>
+                
+                
+                    and
+                    tagged
+                    
+                        <a href="https://bobakmariusz.github.io/tags/analiza-danych/">Analiza danych</a>
+                        
+                            
+                                
+                                    ,
+                                
+                            
+                        
+                    
+                        <a href="https://bobakmariusz.github.io/tags/sieci-neuronowe/">Sieci neuronowe</a>
+                        
+                            
+                                
+                                    ,
+                                
+                            
+                        
+                    
+                        <a href="https://bobakmariusz.github.io/tags/transofrmers/">Transofrmers</a>
+                        
+                            
+                                
+                                    ,
+                                
+                            
+                        
+                    
+                        <a href="https://bobakmariusz.github.io/tags/ais/">AIS</a>
+                        
+                            
+                                
+                                    and
+                                
+                            
+                        
+                    
+                        <a href="https://bobakmariusz.github.io/tags/autoencoder/">Autoencoder</a>
+                        
+                            
+                        
+                    
+                
+            </p>
+            
+            
+        </footer>
+    
+</article>
+
+
+
+    <!-- optional scripts -->
+     
+    <script src="https://bobakmariusz.github.io/js/codeblock.js"></script>
+     
+    <script src="https://bobakmariusz.github.io/js/toggle-theme.js"></script>
+     
+<!-- MathJax script for rendering LaTeX math equations -->
+<script src="https://bobakmariusz.github.io/js/mathjax-config.js"></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+  async
+></script>
+
+  
+  </body>
+</html>
