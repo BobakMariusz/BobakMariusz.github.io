@@ -1,6 +1,6 @@
 +++
 title = "Nienadzorowane wykrywanie anomalii w ruchu morskim z użyciem danych AIS"
-date = 2025-09-30
+date = 2025-12-30
 
 [taxonomies]
 tags = ["Analiza danych", "Sieci neuronowe", "Transofrmers", "AIS", "Autoencoder"]
